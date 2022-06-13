@@ -390,7 +390,7 @@ module.exports = {
                     lastturu: 0,
                     lastseen: 0,
                     lastSetStatus: 0,
-                    registered: false,
+                    registered: true,
                     apel: 20,
                     mangga: 0,
                     stroberi: 0,
@@ -417,7 +417,7 @@ module.exports = {
                 if (chat) {
                     if (!('isBanned' in chat)) chat.isBanned = false
                     if (!('welcome' in chat)) chat.welcome = true
-                    if (!('detect' in chat)) chat.detect = false
+                    if (!('detect' in chat)) chat.detect = true
                     if (!('sWelcome' in chat)) chat.sWelcome = ''
                     if (!('sBye' in chat)) chat.sBye = ''
                     if (!('sPromote' in chat)) chat.sPromote = ''
@@ -429,7 +429,7 @@ module.exports = {
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
-                    detect: false,
+                    detect: true,
                     sWelcome: '',
                     sBye: '',
                     sPromote: '',
