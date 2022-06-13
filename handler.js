@@ -359,8 +359,8 @@ module.exports = {
                     anakrubah: 0,
                     anakanjing: 0,
                     makananpet: 0,
-                    antispam: 0,
-                    antispamlastclaim: 0,
+                    antispam: 5,
+                    antispamlastclaim: 5,
                     kayu: 0,
                     batu: 0,
                     string: 0,
@@ -410,7 +410,7 @@ module.exports = {
                     age: -1,
                     regTime: -1,
                     autolevelup: true,
-                    lastIstigfar: 0,
+                    lastIstigfar: 5,
                 }
                 let chat = global.db.data.chats[m.chat]
                 if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
@@ -748,11 +748,11 @@ global.dfail = (type, m, conn) => {
     let msg = {
         rowner: '*Perintah ini Khusus ArullOfc*',
         owner: '*Perintah ini Khusus ArullOfc*',
-        mods: '*Perintah ini hanya dapat digunakan oleh _*Moderator*_ !*',
-        premium: '*Perintah ini hanya untuk member _*Premium*_ !*',
+        mods: '*Perintah ini hanya dapat digunakan oleh* _*Moderator*_ !',
+        premium: '*Perintah ini hanya untuk member* _*Premium*_ !',
         group: '*Perintah ini hanya dapat digunakan di grup!*',
         private: '*Perintah ini hanya dapat digunakan di Chat Pribadi!*',
-        admin: '*Perintah ini hanya untuk *Admin* grup!*',
+        admin: '*Khusus Admin Cokk🗿*',
         botAdmin: '*Bot Aja Bukan Admin Anj ‼️*',
         unreg: '*Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:*\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
         restrict: 'Fitur ini di *disable*!'
