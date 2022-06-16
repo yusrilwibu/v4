@@ -302,19 +302,19 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
         listMessage: {
             title: `${ucapan()} ${name}`,
             description: menuu,
-            buttonText: 'LIST MENU',
+            buttonText: 'SILAHKAN DIPILIH',
             listType: 1,
-            footerText: "𝚂𝙸𝙻𝙰𝙷𝙺𝙰𝙽 𝙿𝙸𝙻𝙸𝙷 𝙼𝙴𝙽𝚄 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷",
+            footerText: "ArullBotzMD\nJangan Spam Y Sayang",
             mtype: 'listMessage',
             sections: [
               {
                 "rows": [{
                   "title": ` 👨 OWNER BOT`,
-                  "description": "Nomor Pemilik Bot Chat P/Meminta Save Tidak Akan Di Respon",
+                  "description": "Nomor Pemilik ArullBotzMD,Chat P/Meminta Save Tidak Akan Di Respon",
                   "rowId": `.owner`
                 },{
                   "title": "❗ INFO BOT",
-                  "description": "Menampilkan Menu Info",
+                  "description": "Menampilkan Menu Info ArullBotzMD",
                   "rowId": `${_p}? info`
                 }],
                 "title": "INFORMASI BOT"
@@ -433,7 +433,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
                   "rowId": `${_p}? textpro`
                 }
                   ],
-                "title": "LIST MENU"
+                "title": "SILAHKAN DIPILIH"
               }
             ], "contextInfo": {
               "stanzaId": m.key.id,
@@ -507,28 +507,28 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             hydratedFooterText: wm2, 
             hydratedButtons: [{
             urlButton: {
-               displayText: 'Website Creator',
+               displayText: 'YOUTUBE CREATOR',
                url: web
              }
 
            },
              {
              urlButton: {
-               displayText: 'Group Bot', 
+               displayText: 'Group OFC ARULLBOTZMD', 
                url: gc
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'Owner',
+               displayText: 'PEMILIK ARULLBOTZMD',
                id: '.owner',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'Donasi',
+               displayText: 'Donasi DONK',
                id: '.donasi',
              }
 
@@ -549,7 +549,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
          { messageId: template.key.id }
      )
 } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, '*Maaf, menu sedang error*', m)
     throw e
   }
 }
