@@ -145,7 +145,7 @@ module.exports = {
                     if (!isNumber(user.makananpet)) user.makananpet = 0
         
                     if (!isNumber(user.antispam)) user.antispam = 0
-                    if (!isNumber(user.antispamlastclaim)) user.antispamlastclaim = 0
+                    if (!isNumber(user.antispamlastclaim)) user.antispamlastclaim = 5
         
                     if (!isNumber(user.kayu)) user.kayu = 0
                     if (!('kingdom' in user)) user.kingdom = false
@@ -359,7 +359,7 @@ module.exports = {
                     anakrubah: 0,
                     anakanjing: 0,
                     makananpet: 0,
-                    antispam: 5,
+                    antispam: 0,
                     antispamlastclaim: 5,
                     kayu: 0,
                     batu: 0,
@@ -390,7 +390,7 @@ module.exports = {
                     lastturu: 0,
                     lastseen: 0,
                     lastSetStatus: 0,
-                    registered: true,
+                    registered: false,
                     apel: 20,
                     mangga: 0,
                     stroberi: 0,
@@ -405,7 +405,7 @@ module.exports = {
                     job: 'Pengangguran', 
                     lbars: '[▒▒▒▒▒▒▒▒▒]', 
                     role: 'Newbie ㋡', 
-                    registered: true,
+                    registered: false,
                     name: this.getName(m.sender),
                     age: -1,
                     regTime: -1,
