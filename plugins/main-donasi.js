@@ -5,14 +5,17 @@ let dana = global.dana
 let pulsa = global.pulsa
 let gopay = global.gopay
 let numberowner = global.numberowner
-let anu = `*â”€â”€â”€â”€â”€Œ DONATE ã€ â”€â”€â”€*
+let anu = `*DONATE*
 Hai ðŸ‘‹
 Kalian bisa mendukung saya agar bot ini tetap up to date dengan:
-â”Œã€” Donasi â€¢ Emoney ã€•
-â”œðŸ“ŒIndoosat: 085822347348
-â””â”€â”€â”€â”€
-Berapapun donasi kalian akan sangat berarti ðŸ‘
-Arigatou!
+ Donasi Emoney•
+Indoosat: 085822347348
+
+Berapapun donasi kalian akan sangat berarti ‘
+
+Terimakasih Buat Yang Sudah Mau berdonasi🤗
+
+Selebihnya Bisa Hubungi Owner
 Contact person Owner:
 wa.me/6285822347348 (Owner)
 
