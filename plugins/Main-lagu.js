@@ -10,7 +10,7 @@ ptt: true
 }
 handler.help = ['dj1']
 handler.tags = ['sound']
-handler.command = /^(dj1)$/i
+handler.command = /^(dj1|.menu|Tes|Musik)$/i
 handler.fail = null
 handler.exp = 100
 export default handler
