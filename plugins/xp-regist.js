@@ -13,7 +13,7 @@ let handler = async function (m, { text, usedPrefix }) {
   user.name = name.trim()
   user.age = age
   user.regTime = + new Date
-  user.registered = true
+  user.registered = false
   let sn = createHash('md5').update(m.sender).digest('hex')
   m.reply(`
 Daftar berhasil!
