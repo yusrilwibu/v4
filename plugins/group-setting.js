@@ -16,14 +16,14 @@ contoh penggunaan:
 *${usedPrefix + command} tutup*
 *${usedPrefix + command} buka*
 	`.trim(), 'setting grup', 'Buka', '.grup 1', 'Tutup', '.grup 0')
-		throw false
+		throw true
 	}
 	await conn.groupSettingUpdate(m.chat, isClose)
 }
 handler.help = ['grup <buka/tutup>']
 handler.tags = ['group']
 handler.command = /^(grup|group)$/i
-handler.owner = false
+handler.owner = true
 handler.mods = false
 handler.premium = false
 handler.group = true
