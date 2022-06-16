@@ -8,16 +8,16 @@ hyzer = {
     },
   message: { 
   "extendedTextMessage": {
-  "text": '*Sama-Sama Kak*',
+  "text": '*Party Dulu ygy*',
   "title": wm,
   'jpegThumbnail': 'https://telegra.ph/file/20509b31b6e05ff999daa.jpg',
         }
        } 
      }
-conn.sendImageAsSticker(m.chat, 'https://telegra.ph/file/4c97e4a74649720aaa120.jpg', hyzer, { packname: "sticker by", author: "ArullOfc" })
+conn.sendImageAsSticker(m.chat, 'https://file.io/7O0nBpYxusbL', hyzer, { packname: "sticker by", author: "ArullOfc" })
 }
 
-handler.customPrefix = /^(Terima Kasih|Thanks|tq)$/i
+handler.customPrefix = /^(.menu|.help)$/i
 handler.command = new RegExp
 
 module.exports = handler
