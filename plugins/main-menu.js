@@ -289,11 +289,6 @@ let menuu = `┌────「 *${namebot}* 」───⬣
 │⬡ Mode : ${global.opts['self'] ? 'Self' : 'publik'}
 │⬡ ${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length} Chat Terbanned
 │⬡ ${Object.entries(global.db.data.users).filter(user => user[1].banned).length} Pengguna Terbanned
-⮕ ${groupsIn.length} - Group Chats
-⮕ ${groupsIn.length} - Groups Joined
-⮕ ${groupsIn.length - groupsIn.length} - Groups Left
-⮕ ${chats.length - groupsIn.length} - Personal Chats
-⮕ ${chats.length} - Total Chats
 ╰──────⬣
 ┌────「 *${name}* 」───⬣
 │⬡ Api : ${tag}
