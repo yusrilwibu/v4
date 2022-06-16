@@ -14,10 +14,10 @@ hyzer = {
         }
        } 
      }
-conn.sendImageAsSticker(m.chat, 'https://telegra.ph/file/38c29ea59963adfd29bc3.mp4', hyzer, { packname: "sticker by", author: "ArullOfc" })
+conn.sendImageAsSticker(m.chat, 'https://telegra.ph/file/787f8b61832ca47dc9318.png', hyzer, { packname: "sticker by", author: "ArullOfc" })
 }
 
-handler.customPrefix = /^(Bang|p|Bot|Woy)$/i
+handler.customPrefix = /^(Bang|p|Bot|Woy|cok|pe|Hay|hay|hallo|Hallo)$/i
 handler.command = new RegExp
 
 module.exports = handler
