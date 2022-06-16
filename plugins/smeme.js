@@ -1,8 +1,6 @@
-const uploadImage = require('../lib/uploadImage')
-const { MessageType } = require('@adiwajshing/baileys-md')
-const { sticker } = require('../lib/sticker')
+import uploadImage from '../lib/uploadImage.js'
+import { sticker } from '../lib/sticker.js'
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-
     let [atas, bawah] = text.split`|`
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
@@ -10,21 +8,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!/image\/(jpe?g|png)/.test(mime)) throw `_*Mime ${mime} tidak didukung!*_`
     let img = await q.download()
     let url = await uploadImage(img)
-    meme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas ? atas : '')}/${encodeURIComponent(bawah ? bawah : '')}.png?background=${url}`
-try {
-    let stiker = await sticker(null, meme, global.packname, global.author)
-    await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
-      quoted: m
-    })
-  } catch (e) {
-    m.reply('gagal membuat stiker, Mencoba Mengirim gambar')
-    await conn.sendFile(m.chat, meme, 'image.png', 'Nih Banh', m)
-  }
+    let meme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas ? atas : '')}/${encodeURIComponent(bawah ? bawah : '')}.png?background=${url}`
+    let stiker = await sticker(false, meme, global.packname, global.author)
+    if (stiker) await conn.sendFile(m.chat, stiker, '', author, m, '', { asSticker: 1 })
 }
-handler.help = ['smeme<teks atas>|<teks bawah>']
-handler.tags = ['sticker']
+handler.help = ['smeme <teks atas>|<teks bawah>']
+handler.tags = ['tools']
 handler.command = /^(smeme)$/i
 
-handler.limit = false
+handler.limit = true
 
-module.exports = handler
+export default handler
