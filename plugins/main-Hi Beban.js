@@ -17,7 +17,7 @@ hyzer = {
 conn.sendImageAsSticker(m.chat, 'https://telegra.ph/file/7454e89d50d25fe7a6206.png', hyzer, { packname: "sticker by", author: "ArullOfc" })
 }
 
-handler.customPrefix = /^(Hi Beban)$/i
+handler.customPrefix = /^(Hi Beban👋)$/i
 handler.command = new RegExp
 
 module.exports = handler
