@@ -441,6 +441,17 @@ module.exports = {
                     viewonce: true,
                     antiToxic: true,
                 }
+            let settings = global.db.data.settings[this.user.jid]
+            if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
+            if (settings) {
+              if (!'anticall' in settings) settings.anticall = true
+              if (!'antispam' in settings) settings.antispam = true
+              if (!'antitroli' in settings) settings.antitroli = true
+           } else global.db.data.settings[this.user.jid] = {
+              anticall: true,
+              antispam: true,
+              antitroli: true,
+            }
             } catch (e) {
                 console.error(e)
             }
