@@ -1,7 +1,5 @@
 let handler = async (m, {conn}) => {
-let anu = '\nوَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n\n_waalaikumussalam wr.wb._\n_📚 Baca yang dibawah ya!_\n
-"Orang yang mengucapkan salam seperti ini maka ia mendapatkan 30 pahala, kemudian, orang yang dihadapan atau mendengarnya membalas dengan kalimat yang sama yaitu “Wa'alaikum salam warahmatullahi wabarakatuh” atau ditambah dengan yang lain (waridhwaana). Artinya selain daripada do'a selamat juga meminta pada Allah SWT"
-'
+let anu = '\nوَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ\n_waalaikumussalam wr.wb._\n\n*PESAN DARI OWNER:*\nMenjawab salam adalah wajib. Apabila ada seseorang melewati sekumpulan kaum Muslimin, kemudian dia memberi salam kepada mereka, namun mereka tidak mau menjawabnya, maka ruh al-quds (ruh yang suci) akan dicabut dari diri mereka, dan yang menjawab salam orang tersebut adalah malaikat'
 m.reply(anu)  
 }
 handler.customPrefix = /^ass?alam|اَلسَّلاَمُ عَلَيْكُمْ|السلام عليکم$/i // ketik bot (tanpa prefix)
@@ -15,5 +13,3 @@ handler.admin = false
 handler.botAdmin = false
 handler.fail = null
 module.exports = handler
-
-
