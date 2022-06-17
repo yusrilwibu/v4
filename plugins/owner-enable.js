@@ -85,6 +85,14 @@ global.opts['self'] = !isEnable
       }
       setting.anticall = isEnable
       break
+    case 'anticulik':
+      isAll = true
+      if (!isOwner) {
+        global.dfail('owner', m, conn)
+        throw false
+      }
+      setting.anticulik = isEnable
+      break
     case 'antitroli':
       isAll = true
       if (!isOwner) {
