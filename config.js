@@ -21,7 +21,7 @@ global.price1 = 'Permanen 15.000\n1 bulan 10.000\n2 Minggu 7.000\n1 Minggu 5.000
 //=======『 Tampilan Dan Lainnya 』============//
 global.fotonya1 = 'https://telegra.ph/file/aea4991822786add62469.jpg' //ganti jadi foto bot mu
 global.fotonya2 = 'https://telegra.ph/file/00009d2ade51e015153ad.jpg' //ini juga ganti 
-global.lolkey = 'Danwfrostkey' //biar mudah ngegantinya semisal apikeynya expired:v
+global.lolkey = 'Papah-Chan' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
 global.wm = 'ArullBotzMD\nJangan Spam Ya Kontoll'
 global.watermark = wm
@@ -42,42 +42,25 @@ global.author = '© ArullOfc'
 //=============『 Apikey 』================== //
 global.APIs = { // API Prefix
   // name: 'https://website'
-  amel: 'https://melcanz.com',
-    bx: 'https://bx-hunter.herokuapp.com',
-  dhnjing: 'https://dhnjing.xyz',
-  hardianto: 'https://hardianto-chan.herokuapp.com',
-  jonaz: 'https://jonaz-api-v2.herokuapp.com',
-  neoxr: 'https://neoxr-api.herokuapp.com',
   nrtm: 'https://nurutomo.herokuapp.com',
-  xteam: 'https://api.xteam.xyz',
-  nzcha: 'http://nzcha-apii.herokuapp.com',
   bg: 'http://bochil.ddns.net',
-  fdci: 'https://api.fdci.se',
-  dzx: 'https://api.dhamzxploit.my.id',
-  bsbt: 'https://bsbt-api-rest.herokuapp.com',
+  xteam: 'https://api.xteam.xyz',
+  melcanz: 'httpa://melcanz.com',
+  lol: 'https://api.lolhuman.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
   zeks: 'https://api.zeks.xyz',
-  zekais: 'http://zekais-api.herokuapp.com',
-  hardianto: 'https://hardianto-chan.herokuapp.com',
-  pencarikode: 'https://pencarikode.xyz', 
-  erdwepe: 'https://erdwpe-api.herokuapp.com',
-  lolhuman: 'https://api.lolhuman.xyz',
-  LeysCoder: 'https://leyscoders-api.herokuapp.com',
-  rey: 'https://server-api-rey.herokuapp.com'
+  pencarikode: 'https://pencarikode.xyz',
+  LeysCoder: 'https://leyscoders-api.herokuapp.com'
 }
 global.APIKeys = { // APIKey Here
-  // 'https://website': 'apikey'
+// 'https://website': 'apikey'
+  'https://api.xteam.xyz': 'apivproject',
   'https://melcanz.com': 'elaina',
-  'https://server-api-rey.herokuapp.com': 'apirey',
-  'https://api.xteam.xyz': 'd37372311698ed1d',
+  'https://api.lolhuman.xyz': 'pkebgk8248jskrkfm',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
-  'https://bsbt-api-rest.herokuapp.com': 'benniismael',
   'https://api.zeks.xyz': 'apivinz',
-  'https://hardianto-chan.herokuapp.com': 'hardianto',
-  'https://pencarikode.xyz': 'pais', 
-  'https://leyscoders-api.herokuapp.com': 'dappakntlll',
-  'https://zekais-api.herokuapp.com': 'apikeymu',
-  'https://api.lolhuman.xyz': 'Deffbotz',
+  'https://pencarikode.xyz': 'pais',
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
 }
 
 //=============『 RPG GAMES 』================== //
