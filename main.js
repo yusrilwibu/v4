@@ -125,7 +125,7 @@ global.reloadHandler = function (restatConn) {
   }
 
   conn.welcome = '*Welcome To Groub* @subject\n\n*Moga Betah Yah;)*'
-  conn.bye = '*Keluar Tuh Si Memex,Dadahh👋*'
+  conn.bye = '*Keluar Tuh Si Beban,Dadahh👋\nKalo Balik Jangan Lupa Bawa Gorengan🤤*'
   conn.spromote = '@user *sekarang admin!*'
   conn.sdemote = '@user *sekarang bukan admin!*'
   conn.handler = handler.handler.bind(conn)
