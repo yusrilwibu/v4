@@ -41,30 +41,37 @@ global.author = '© ArullOfc'
 
 //=============『 Apikey 』================== //
 global.APIs = { // API Prefix
-  // name: 'https://website'
+    // nama: 'https://website'
+  hardianto: 'https://hardianto-chan.herokuapp.com',
+  rey: 'https://server-api-rey.herokuapp.com',
+  jonaz: 'https://jonaz-api-v2.herokuapp.com',
+  neoxr: 'https://neoxr-api.herokuapp.com',
   nrtm: 'https://nurutomo.herokuapp.com',
-  bg: 'http://bochil.ddns.net',
+  pencarikode: 'https://pencarikode.xyz',
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
-  zeks: 'https://api.zeks.me',
-  pencarikode: 'https://pencarikode.xyz',
-  LeysCoder: 'https://leyscoders-api.herokuapp.com',
-  neoxr: 'https://api.neoxr.eu.org',
-  amel: 'https://melcanz.com',
-  hardianto: 'https://hardianto.xyz',
-  lol: 'https://api.lolhuman.xyz'
+  zekais: 'http://zekais-api.herokuapp.com',
+  zeks: 'https://api.zeks.xyz',
+  vhtear: 'https://api.vhtear.com',
+  lolhum: 'https://api.lolhuman.xyz',
+  fxc7: 'https://fxc7-api.herokuapp.com',
+  bx: 'https://bx-hunter.herokuapp.com',
 }
 global.APIKeys = { // APIKey Here
 // 'https://website': 'apikey'
-  'https://api.neoxr.eu.org': 'yntkts',
-  'https://api.xteam.xyz': 'Apikeys',
-  'https://melcanz.com': 'Apikeys',
-  'https://api.lolhuman.xyz': 'Apikeys',
+  'https://server-api-rey.herokuapp.com': 'apirey',
+  'https://hardianto-chan.herokuapp.com': 'hardianto',
+  'https://neoxr-api.herokuapp.com': 'yntkts',
+  'https://pencarikode.xyz': 'APIKEY',
+  'https://api.xteam.xyz': 'HIRO',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
-  'https://api.zeks.me': 'apivinz',
-  'https://pencarikode.xyz': 'pais',
-  'https://hardianto.xyz': 'hardianto',
-  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
+  'https://api.zeks.xyz': 'nyyxz-bot',
+  'https://api.lolhuman.xyz': '2d118bcd18c4e779748a84b',
+  'https://api.vhtear.com': 'sayahafiz',
+  'https://fxc7-api.herokuapp.com': 'uN8rsK4g',
+  'https://api.justaqul.xyz': '5kbUqdG00OXelFYx',
+  'http://zekais-api.herokuapp.com': 'grqgD6pU',
+  'https://bx-hunter.herokuapp.com': 'Ikyy69',
 }
 
 //=============『 RPG GAMES 』================== //
