@@ -1,16 +1,23 @@
-import util from 'util'
-import path from 'path'
-
-let handler = async (m, { conn }) => {
-let vn = './media/dj1.mp3'
-conn.sendFile(m.chat, vn, 'dj1.mp3', null, m, true, {
-type: 'audioMessage', 
-ptt: true 
-})
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+let name = await conn.getName(m.sender)
+  let wm = global.wm
+hyzer = {
+    key : {
+  remoteJid: 'status@broadcast',
+  participant : '0@s.whatsapp.net'
+    },
+  message: { 
+  "extendedTextMessage": {
+  "text": '*Partyan Dulu ygy*',
+  "title": wm,
+  'jpegThumbnail': 'https://telegra.ph/file/20509b31b6e05ff999daa.jpg',
+        }
+       } 
+     }
+conn.sendImageAsSticker(m.chat, 'https://file.io/1BZKHiUuKXgL', hyzer, { packname: "sticker by", author: "ArullOfc" })
 }
-handler.help = ['dj1']
-handler.tags = ['sound']
-handler.command = /^(dj1|.menu|Tes|Musik)$/i
-handler.fail = null
-handler.exp = 100
-export default handler
+
+handler.customPrefix = /^(Tes)$/i
+handler.command = new RegExp
+
+module.exports = handler
