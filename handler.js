@@ -20,7 +20,7 @@ module.exports = {
             if (!m) return
             // console.log(m)
             m.exp = 0
-            m.limit = false
+            m.limit = false 
             try {
                 let user = global.db.data.users[m.sender]
                 if (typeof user !== 'object') global.db.data.users[m.sender] = {}
@@ -249,7 +249,7 @@ module.exports = {
                     if (!user.premium) user.premium = false
                     if (!user.premium) user.premiumTime= 0
                     if (!user.role) user.role = 'Newbie ㋡'
-                    if (!('autolevelup' in user)) user.autolevelup = true
+                    if (!('autolevelup' in user)) user.autolevelup = false
                     if (!('lastIstigfar' in user)) user.lastIstigfar = true
                 } else global.db.data.users[m.sender] = {
                     healt: 100,
@@ -409,7 +409,7 @@ module.exports = {
                     name: this.getName(m.sender),
                     age: -1,
                     regTime: -1,
-                    autolevelup: true,
+                    autolevelup: false,
                     lastIstigfar: 5,
                 }
                 let chat = global.db.data.chats[m.chat]
@@ -716,7 +716,7 @@ module.exports = {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                       let pp = './src/welcome.jpg'
+                       let pp = './src/images.jpg'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
