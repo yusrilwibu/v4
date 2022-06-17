@@ -427,9 +427,8 @@ module.exports = {
                     if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('simi' in chat)) chat.simi = false
-                    if (!('anticall' in chat)) chat.anticall = true
                     if (!('antispam' in chat)) chat.antispam = true
-                    if (!('antiToxic' in chat)) chat.antiToxic = true
+                    if (!('antitroli' in chat)) chat.antitroli = true
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
@@ -443,9 +442,8 @@ module.exports = {
                     viewonce: true,
                     antibadword: true,
                     simi: false,
-                    anticall: true
                     antispam: true
-                    antiToxic: true,
+                    antitroli: true,
                 }
             } catch (e) {
                 console.error(e)
