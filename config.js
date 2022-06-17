@@ -42,20 +42,28 @@ global.author = '© ArullOfc'
 //=============『 Apikey 』================== //
 global.APIs = { // API Prefix
 // name: 'https://website'
-  bx: 'https://bx-hunter.herokuapp.com',
-  rey: 'https://server-api-rey.herokuapp.com',
-  hardianto: 'https://hardianto.xyz',
+  amel: 'https://melcanz.com',
+    bx: 'https://bx-hunter.herokuapp.com',
+  dhnjing: 'https://dhnjing.xyz',
+  hardianto: 'https://hardianto-chan.herokuapp.com',
+  jonaz: 'https://jonaz-api-v2.herokuapp.com',
   neoxr: 'https://neoxr-api.herokuapp.com',
   nrtm: 'https://nurutomo.herokuapp.com',
   xteam: 'https://api.xteam.xyz',
+  nzcha: 'http://nzcha-apii.herokuapp.com',
+  bg: 'http://bochil.ddns.net',
+  fdci: 'https://api.fdci.se',
+  dzx: 'https://api.dhamzxploit.my.id',
+  bsbt: 'https://bsbt-api-rest.herokuapp.com',
   zahir: 'https://zahirr-web.herokuapp.com',
-  lol: 'https://api.lolhuman.xyz',
-  caliph: 'https://caliphapi.com',
-  dhnjing: 'https://dhnjing.xyz',
-  zeks: 'https://api.zeks.me',
-  pencarikode: 'https://pencarikode.xyz',
-  fxc7: 'https://fxc7-api.herokuapp.com',
-  LeysCoder: 'https://leyscoders-api.herokuapp.com'
+  zeks: 'https://api.zeks.xyz',
+  zekais: 'http://zekais-api.herokuapp.com',
+  hardianto: 'https://hardianto-chan.herokuapp.com',
+  pencarikode: 'https://pencarikode.xyz', 
+  erdwepe: 'https://erdwpe-api.herokuapp.com',
+  lolhuman: 'https://api.lolhuman.xyz',
+  LeysCoder: 'https://leyscoders-api.herokuapp.com',
+  rey: 'https://server-api-rey.herokuapp.com'
 }
 global.APIKeys = { // APIKey Here
 // 'https://website': 'apikey' (apikey kalian^_^)
