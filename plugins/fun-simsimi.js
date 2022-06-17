@@ -11,7 +11,7 @@ handler.before = async (m) => {
         if (!res.ok) return m.reply(`${res.status} ${res.statusText}`)
         let json = await res.json()
         if (!json.status) return m.reply(require('util').format(json))
-        m.reply('' + json.jawaban)
+        m.reply('json.jawaban')
         return !0
     }
     return !0
