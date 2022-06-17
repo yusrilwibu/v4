@@ -31,6 +31,22 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         global.dfail('admin', m, conn)
         throw false
       }
+    case 'antispam':
+      isAll = true
+      if (!isOwner) {
+        global.dfail('owner', m, conn)
+        throw false
+      }
+      setting.antispam = isEnable
+      break
+    case 'anon':
+      isAll = true
+      if (!isOwner) {
+        global.dfail('owner', m, conn)
+        throw false
+      }
+      setting.anon = isEnable
+      break
     case 'simi':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
