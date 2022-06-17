@@ -127,7 +127,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     default:
       if (!/[01]/.test(command)) throw `
-┌〔 Daftar Opsi 〕${isOwner ? '\n├ antispam\n├ antitroli\n├ autoread\n├ backup\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ antilink\n├ mycontact' : ''}
+┌〔 Daftar Opsi 〕${isOwner ? '\n├ autoread\n├ backup\n├ public\n├ antilink\n├ mycontact' : ''}
 ├ autolevelup
 ├ antilink
 ├ welcome
@@ -143,7 +143,7 @@ ${usedPrefix}off welcome
 `.trim())
 }
 handler.help = ['on', 'off'].map(v => v + ' <opsi>')
-handler.tags = ['group', 'owner']
+handler.tags = ['', 'owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
 module.exports = handler
