@@ -301,11 +301,11 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             sections: [
               {
                 "rows": [{
-                  "title": ` 👨 OWNER Bot`,
-                  "description": "Nomor Pemilik ArullBotzMD Chat P/Meminta Save Tidak Akan Di Respon",
+                  "title": ` 😎 OWNER ARULLBOTZMD`,
+                  "description": "Nomor Pemilik ArullBotzMD,Hanya Ngesave Nomor Cewek Ya🗿",
                   "rowId": `.owner`
                   },{
-                  "title": "❗ INFO Bot",
+                  "title": "🤖 INFO ARULLBOTZMD",
                   "description": "Menampilkan Menu Info",
                   "rowId": `${_p}? info`
                   }],
