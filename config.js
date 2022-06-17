@@ -66,19 +66,18 @@ global.APIs = { // API Prefix
   rey: 'https://server-api-rey.herokuapp.com'
 }
 global.APIKeys = { // APIKey Here
-// 'https://website': 'apikey' (apikey kalian^_^)
+// 'https://website': 'apikey'
+  'https://melcanz.com': 'elaina',
   'https://server-api-rey.herokuapp.com': 'apirey',
-  'https://bx-hunter.herokuapp.com': 'Ikyy69',
-  'https://hardianto.xyz': 'hardianto',
-  'https://neoxr-api.herokuapp.com': 'yntkts',
-  'https://api.xteam.xyz': 'cristian9407',
-  'https://api.lolhuman.xyz': 'Dawnfrostkey',
-  'https://caliphapi.com': 'ELYASXD',
+  'https://api.xteam.xyz': 'd37372311698ed1d',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
-  'https://api.zeks.me': 'apivinz',
-  'https://pencarikode.xyz': 'pais',
-  'https://fxc7-api.herokuapp.com': 'fxc7COOL',
-  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
+  'https://bsbt-api-rest.herokuapp.com': 'benniismael',
+  'https://api.zeks.xyz': 'apivinz',
+  'https://hardianto-chan.herokuapp.com': 'hardianto',
+  'https://pencarikode.xyz': 'pais', 
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll',
+  'https://zekais-api.herokuapp.com': 'apikeymu',
+  'https://api.lolhuman.xyz': 'Deffbotz',
 }
 
 //=============『 RPG GAMES 』================== //
