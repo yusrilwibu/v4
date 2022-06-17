@@ -295,8 +295,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             description: menuu,
             buttonText: 'LIST MENU',
             listType: 1,
-            footerText: "⬣━〔Powered By ©ArullOfc〕━⬣\n
-▌│█║▌║▌║║▌║▌║█│▌ ",
+            footerText: "⬣━〔Powered By ©ArullOfc〕━⬣\n▌│█║▌║▌║║▌║▌║█│▌",
             mtype: 'listMessage',
             sections: [
               {
@@ -304,14 +303,14 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
                   "title": ` 👨 OWNER Bot`,
                   "description": "Nomor Pemilik ArullBotzMD Chat P/Meminta Save Tidak Akan Di Respon",
                   "rowId": `.owner`
-                },{
+                  },{
                   "title": "❗ INFO Bot",
                   "description": "Menampilkan Menu Info",
                   "rowId": `${_p}? info`
-                }],
-                "title": "INFORMASI BOT"
-              }, {
-                "rows": [{
+                  }],
+                  "title": "INFORMASI BOT"
+               }, {
+                 "rows": [{
                   "title": `│🧾│ SEMUA PERINTAH`,
                   "description": "Menampilkan Semua Menu",
                   "rowId": '.? all'
@@ -319,7 +318,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
                   "title": "│ 📝│ ABSEN & VOTING",
                   "description": "Menampilkan Menu Absen",
                   "rowId": `${_p}? absen`
-                }, {
+                  }, {
                   "title": "│⛩️│ANIME",
                   "description": "Menampilkan Menu Anime",
                   "rowId": `${_p}? anime`
