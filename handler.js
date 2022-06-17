@@ -618,7 +618,7 @@ module.exports = {
                     }
                     try {
                         await plugin.call(this, m, extra)
-                        if (!isPrems) m.limit = m.limit || plugin.limit || false
+                        if (!isPrems) m.limit = m.limit || plugin.limit || true
                     } catch (e) {
                         // Error occured
                         m.error = e
