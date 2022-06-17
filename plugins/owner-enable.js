@@ -115,6 +115,13 @@ global.opts['self'] = !isEnable
         global.dfail('owner', m, conn)
         throw false
       }
+    case 'simi':
+      if (m.isGroup) {
+        global.dfail('private', m, conn)
+        throw false
+      } 
+      chat.simi = isEnable
+      break
       setting.nsfw = isEnable
       break
     case 'jadibot':
