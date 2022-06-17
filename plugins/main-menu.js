@@ -13,18 +13,18 @@ let moment = require('moment-timezone')
 //━━━━━━━━[ DEFAULT MENU ]━━━━━━━━//
 const defaultMenu = {
   before:`
-   〔⳹ArullBotzMD⳹
+⫹⫺  〔⳹INFO USER⳹
 ║Hai, %name!
 ║Tersisa *%limit Limit*
 ║Role *%role*
 ║Level *%level (%exp / %maxexp)*
 ║[%xp4levelup]
 ║%totalexp XP secara Total
-   〔⳹TANGGAL⳹〕
+⫹⫺  〔⳹TANGGAL⳹〕
 ║Tanggal: *%week %weton, %date*
 ║Tanggal Islam: *%dateIslamic*
 ║Waktu: *%time*
-   〔⳹TIME⳹
+⫹⫺  〔⳹TIME⳹
 ║Uptime: *%uptime (%muptime)*
 ║Database: %rtotalreg dari %totalreg
 ║Memory Used : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
@@ -520,7 +520,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
            },
                {
              quickReplyButton: {
-               displayText: 'Donasi Donk(',
+               displayText: 'Donasi',
                id: '.donasi',
              }
 
