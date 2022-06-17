@@ -17,6 +17,6 @@ export async function all(m) {
         this.spam[m.sender] = {
             jid: m.sender,
             count: 0,
-            lastspam: 0
+            lastspam: 5
         }
 }
