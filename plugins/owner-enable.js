@@ -42,6 +42,33 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
       chat.antiLink = isEnable
       break
+    case 'antidelete':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.delete = !isEnable
+      break
+    case 'antibadword':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiBadword = isEnable
+      break
+    case 'autodelvn':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.autodelvn = isEnable
+      break
     case 'publik':
     case 'public':
       isAll = true
