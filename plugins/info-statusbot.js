@@ -1,19 +1,38 @@
-
 let handler = async (m, { conn }) => {
-    let wm = global.wm
+    let { anon, anticall, antispam, antitroli, backup, groupOnly, nsfw } = global.db.data.settings[conn.user.jid]
+    const chats = conn.chats.all()
+    const groups = chats.filter(v => v.jid.endsWith('g.us'))
+
+    let wm = global.botwm
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
 
     let str = `
-╭─────[ *Status* ]────✧
-├◌ Aktif selama ${uptime}
-├◌ Mode : ${global.opts['self'] ? 'Self' : 'publik'}
-├◌ ${Object.keys(global.db.data.users).length} Pengguna
-├◌ ${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length} Chat Terbanned
-├◌ ${Object.entries(global.db.data.users).filter(user => user[1].banned).length} Pengguna Terbanned
-╰────────────···
+╭╭═══════════════════════
+║╭──❉ 〔 ⳹ ❋ཻུ۪۪STATUS ARULLBOTZMD⳹ ❋ཻུ۪۪ 〕 ❉────── 
+║│➸ Aktif selama ${uptime}
+║│➸ Baterai ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
+║│➸ *${groups.length}* Grup
+║│➸ *${chats.length - groups.length}* Chat Pribadi
+║│➸ *${Object.keys(global.db.data.users).length}* Pengguna
+║│➸ *${conn.blocklist.length}* Terblock
+║│➸ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
+║│➸ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
+╰─────────❉
+_____•••••••••
+╭═══════════════════════
+║╭──❉ 〔 ⳹ ❋ཻུ۪۪PERATURAN ARULLBOTZMD⳹ ❋ཻུ۪۪ 〕 ❉────── 
+║│➸ ${anon ? '🙋' : '🙅'} *Anon Chat*
+║│➸ ${anticall ? '🙋' : '🙅'} *Anti Call*
+║│➸ ${antispam ? '🙋' : '🙅'} *Anti Spam*
+║│➸ ${antitroli ? '🙋' : '🙅'} *Anti Troli*
+║│➸ ${backup ? '🙋' : '🙅'} *Auto Backup DB*
+║│➸ ${groupOnly ? '🙋' : '🙅'} *Mode Grup*
+║│➸ ${nsfw ? '🙋' : '🙅'} *Mode Nsfw*
+╰─────────❉
+_____•••••••
     `.trim()
-conn.send2But(m.chat, str, wm, 'Info', '.info', 'Owner', '.owner',m)
+conn.send2Button(m.chat, str, wm, '⋮☰ Menu', '.menu', '✆Owner✆', '.owner',m)
 conn.reply(str)
 }
 handler.help = ['botstatus']
