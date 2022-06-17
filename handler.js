@@ -427,6 +427,7 @@ module.exports = {
                     if (!('simi' in chat)) chat.simi = false
                     if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('antiToxic' in chat)) chat.antiToxic = true
+                    if (!'anticall' in settings) settings.anticall = true
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
@@ -440,6 +441,7 @@ module.exports = {
                     simi: false,
                     viewonce: true,
                     antiToxic: true,
+                    anticall: true
                 }
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
