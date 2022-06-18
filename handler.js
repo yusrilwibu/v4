@@ -424,7 +424,7 @@ module.exports = {
                     if (!('sDemote' in chat)) chat.sDemote = ''
                     if (!('delete' in chat)) chat.delete = true
                     if (!('antiLink' in chat)) chat.antiLink = true
-                    if (!('simi' in chat)) chat.simi = true
+                    if (!('simi' in chat)) chat.simi = false
                     if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('antiToxic' in chat)) chat.antiToxic = true
                     if (!'anticall' in settings) settings.anticall = true
@@ -438,7 +438,7 @@ module.exports = {
                     sDemote: '',
                     delete: true,
                     antiLink: true,
-                    simi: true,
+                    simi: false,
                     viewonce: true,
                     antiToxic: true,
                     anticall: true
