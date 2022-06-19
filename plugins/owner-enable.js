@@ -124,8 +124,9 @@ global.opts['self'] = !isEnable
         throw false
       }
     case 'simi':
-      if (m.isGroup) {
-        global.dfail('private', m, conn)
+      isAll = true
+      if (!isOwner) {
+        global.dfail('owner', m, conn)
         throw false
       } 
       chat.simi = isEnable
