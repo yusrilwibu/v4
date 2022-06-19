@@ -18,7 +18,7 @@ handler.premium = false
 handler.group = false
 handler.private = false
 
-handler.admin = false
+handler.admin = true
 handler.botAdmin = true
 
 handler.fail = null
