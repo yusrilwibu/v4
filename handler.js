@@ -741,22 +741,52 @@ module.exports = {
                 break
         }
     },
-    async delete({ remoteJid, fromMe, id, participant }) {
-        if (fromMe) return
-        let chats = Object.entries(conn.chats).find(([user, data]) => data.messages && data.messages[id])
-        if (!chats) return
-        let msg = JSON.parse(chats[1].messages[id])
-        let chat = global.db.data.chats[msg.key.remoteJid] || {}
-        if (chat.delete) return
-        await this.reply(msg.key.remoteJid, `
-Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
-Untuk mematikan fitur ini, ketik
-*.enable delete*
-`.trim(), msg, {
-            mentions: [participant]
-        })
-        this.copyNForward(msg.key.remoteJid, msg).catch(e => console.log(e, msg))
+    async delete(m) {
+    let chat = global.db.data.chats[m.key.remoteJid]
+    if (chat.delete) return
+    await this.send2But(m.key.remoteJid, `
+Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
+
+ketik *.off delete* untuk mematikan pesan ini
+`.trim(), wm, 'Owner', '.owner', 'Menu', '.menu', m.message, {
+      contextInfo: {
+        mentionedJid: [m.participant]
+      }
+    })
+    this.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
+  },
+  async onCall(json) {
+    let { from } = json[2][0][1]
+    let users = global.db.data.users
+    let user = users[from] || {}
+    if (user.whitelist) return
+    if (!db.data.settings.anticall) return
+    switch (this.callWhitelistMode) {
+      case 'mycontact':
+        if (from in this.contacts && 'short' in this.contacts[from])
+          return
+        break
     }
+    user.call += 1
+    await this.reply(from, `Jika kamu menelepon lebih dari 5, kamu akan diblokir.\n\n${user.call} / 5`, null)
+    if (user.call == 5) {
+      await this.blockUser(from, 'add')
+      user.call = 0
+    }
+  },
+  async GroupUpdate({ jid, desc, descId, descTime, descOwner, announce }) {
+    if (!db.data.chats[jid].descUpdate) return
+    if (!desc) return
+    let caption = `
+    @${descOwner.split`@`[0]} telah mengubah deskripsi grup.
+
+    ${desc}
+
+    ketik *.off desc* untuk mematikan pesan ini
+        `.trim()
+    this.send2But(jid, caption, wm3, 'Owner', '.owner', 'Menu', '.menu', { contextInfo: { mentionedJid: this.parseMention(caption) } })
+
+  }
 }
 
 global.dfail = (type, m, conn) => {
