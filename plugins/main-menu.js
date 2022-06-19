@@ -296,7 +296,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             description: menuu,
             buttonText: 'LIST MENU',
             listType: 1,
-            footerText: "⬣━〔Powered By ©ArullOfc〕━⬣\n       ▌│█║▌║▌║║▌║▌║█│▌",
+            footerText: "⬣━〔Powered By ©️ArullOfc〕━⬣\n       ▌│█║▌║▌║║▌║▌║█│▌",
             mtype: 'listMessage',
             sections: [
               {
@@ -550,6 +550,7 @@ handler.tags = ['main']
 handler.command = /^(menu|help|\?)$/i
 handler.owner = false
 handler.mods = false
+handler.register = true
 handler.premium = false
 handler.group = false
 handler.private = false
