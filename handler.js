@@ -714,19 +714,25 @@ module.exports = {
             case 'add':
             case 'remove':
                 if (chat.welcome) {
-                    let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
-                    for (let user of participants) {
-                       let pp = './src/images.jpg'
-                        try {
-                            pp = await this.profilePictureUrl(user, 'image')
-                        } catch (e) {
-                        } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
-                                (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang 1'))
-                                this.sendButtonImg(id, pp, text, "Group Message by ArullOfc", "Anjay Beban Group", "wkwk", null)
-                                }
-                    }
+            let groupMetadata = await this.groupMetadata(jid)
+            for (let user of participants) {
+              let kai = await(await fetch('https://telegra.ph/file/ef7bc09ecb36812dafff8.jpg')).buffer()
+              let poi = await(await fetch('https://telegra.ph/file/67b7005403a0b8fa1bdd7.jpg')).buffer()
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc) :
+                  (chat.sBye || this.bye || conn.bye || '左様なら Sayounara, @user!')).replace(/@user/g, '@' + user.split`@`[0])
+                let wel = `━━━━━━ Welcome Beban ━━━━━━`
+                let lea = `━━━━━━ Good Bye Beban ━━━━━━`
+                this.reply(jid, text, 0, { thumbnail: kai, contextInfo: {
+                mentionedJid: [user],
+                externalAdReply: {
+                  mediaUrl: 'https://youtu.be/jOhhY7ef_qM',
+                  title: action === 'add' ? wel : lea,
+                  body: 'ArullBotzMD',
+                  thumbnail: poi
                 }
+              }}) 
+            }
+          }
                 break
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
