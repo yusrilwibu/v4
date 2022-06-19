@@ -15,10 +15,10 @@ handler.command = /^link(gro?up)?$/i
 handler.owner = true
 handler.mods = false
 handler.premium = false
-handler.group = false
+handler.group = true
 handler.private = false
 
-handler.admin = true
+handler.admin = fals
 handler.botAdmin = true
 
 handler.fail = null
