@@ -108,46 +108,37 @@ const imports = (path) => {
   return modules
 }
 let isInit = true
-global.reloadHandler = function () {
-  let handler = require('./handler')
+global.reloadHandler = function (restatConn) {
+  let handler = imports('./handler')
+  if (restatConn) {
+    try { global.conn.ws.close() } catch { }
+    global.conn = {
+      ...global.conn, ...simple.makeWASocket(connectionOptions)
+    }
+  }
   if (!isInit) {
-    conn.off('chat-update', conn.handler)
-    conn.off('message-delete', conn.onDelete)
-    conn.off('group-participants-update', conn.onParticipantsUpdate)
-    conn.off('group-update', conn.onGroupUpdate)
-    conn.off('CB:action,,call', conn.onCall)
+    conn.ev.off('messages.upsert', conn.handler)
+    conn.ev.off('group-participants.update', conn.participantsUpdate)
+    conn.ev.off('message.delete', conn.onDelete)
+    conn.ev.off('connection.update', conn.connectionUpdate)
+    conn.ev.off('creds.update', conn.credsUpdate)
   }
-  conn.welcome = '══════◄ 𝐘𝐀𝐏𝐒 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 @user 𝐃𝐈 @subject ►══════'
-  conn.bye = '══════◄ 𝐘𝐀𝐇 𝐊𝐎𝐊 𝐎𝐔𝐓 𝐒𝐈𝐇 @user ? 𝐌𝐄𝐍𝐓𝐀𝐋 𝐀𝐌𝐀𝐍𝐊𝐀𝐍 ►══════'
-  conn.spromote = 'yaelah,Kenapa lu harus admin sih @user ?'
-  conn.sdemote = 'yah gak admin lagi tu sih @user'
-  conn.handler = handler.handler
-  conn.onDelete = handler.delete
-  conn.onParticipantsUpdate = handler.participantsUpdate
-  conn.onGroupUpdate = handler.GroupUpdate
-  conn.onCall = handler.onCall
-  conn.on('chat-update', conn.handler)
-  conn.on('message-delete', conn.onDelete)
-  conn.on('group-participants-update', conn.onParticipantsUpdate)
-  conn.on('group-update', conn.onGroupUpdate)
-  conn.on('CB:action,,call', conn.onCall)
-  if (isInit) {
-    conn.on('error', conn.logger.error)
-    conn.on('close', () => {
-      setTimeout(async () => {
-        try {
-          if (conn.state === 'close') {
-            if (fs.existsSync(authFile)) await conn.loadAuthInfo(authFile)
-            await conn.connect()
-            fs.writeFileSync(authFile, JSON.stringify(conn.base64EncodedAuthInfo(), null, '\t'))
-            global.timestamp.connect = new Date
-          }
-        } catch (e) {
-          conn.logger.error(e)
-        }
-      }, 5000)
-    })
-  }
+
+  conn.welcome = '*Welcome To Groub* @subject\n\n*Moga Betah Yah;)*'
+  conn.bye = '*Keluar Tuh Si Beban,Dadahh👋*'
+  conn.spromote = '@user *sekarang admin!*'
+  conn.sdemote = '@user *sekarang bukan admin!*'
+  conn.handler = handler.handler.bind(conn)
+  conn.participantsUpdate = handler.participantsUpdate.bind(conn)
+  conn.onDelete = handler.delete.bind(conn)
+  conn.connectionUpdate = connectionUpdate.bind(conn)
+  conn.credsUpdate = saveState.bind(conn)
+
+  conn.ev.on('messages.upsert', conn.handler)
+  conn.ev.on('group-participants.update', conn.participantsUpdate)
+  conn.ev.on('message.delete', conn.onDelete)
+  conn.ev.on('connection.update', conn.connectionUpdate)
+  conn.ev.on('creds.update', conn.credsUpdate)
   isInit = false
   return true
 }
