@@ -1,21 +1,23 @@
-let handler = async (m, { conn, isROwner, text }) => {
-    const delay = time => new Promise(res => setTimeout(res, time))
-    let getGroups = await conn.groupFetchAllParticipating()
-    let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
-    let anu = groups.map(v => v.id)
-    var pesan = m.quoted && m.quoted.text ? m.quoted.text : text
-    if(!pesan) throw 'teksnya?'
-    m.reply(`Mengirim Broadcast Ke ${anu.length} Chat, Waktu Selesai ${anu.length * 0.5 } detik`)
-    for (let i of anu) {
-    await delay(500)
-    conn.sendBut(i, `${pesan}`, wm, 'OWNER ARULLBOTZMD', '.owner', null).catch(_ => _)
-    }
-  m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
+let handler = async (m, { conn, text }) => {
+  let groups = conn.chats.all().filter(v => v.jid.endsWith('g.us')).map(v => v.jid)
+  let cc = text ? m : m.quoted ? await m.getQuotedObj() : false || m
+  let teks = text ? text : cc.text
+  conn.reply(m.chat, `_Mengirim pesan broadcast ke ${groups.length} grup_\nestimasi selesai ${groups.length * 1.5} detik`, m)
+  for (let id of groups) {
+    await delay(1500)
+    await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : '─────❏ *ʙʀᴏᴀᴅᴄᴀsᴛ* ❏─────\n\n' + teks + '\n\n' + watermark), true).catch(_ => _)
+  }
+  m.reply('_*Broadcast Berhasil Dikirim*_')
 }
-handler.help = ['bcgcbot <teks>']
+handler.help = ['broadcastgroup', 'bcgc'].map(v => v + ' <teks>')
 handler.tags = ['owner']
-handler.command = /^((broadcastgc|bcgc)bot)$/i
-
+handler.command = /^(broadcast|bc)(group|grup|gc)(bot)$/i
 handler.owner = true
-
 module.exports = handler
+
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
+
+const randomID = length => require('crypto').randomBytes(Math.ceil(length * .5)).toString('hex').slice(0, length)
+
+const delay = time => new Promise(res => setTimeout(res, time))
