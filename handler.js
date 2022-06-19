@@ -409,7 +409,7 @@ module.exports = {
                     name: this.getName(m.sender),
                     age: -1,
                     regTime: -1,
-                    autolevelup: false,
+                    autolevelup: true,
                     lastIstigfar: 5,
                 }
                 let chat = global.db.data.chats[m.chat]
@@ -792,28 +792,28 @@ ketik *.off delete* untuk mematikan pesan ini
 global.dfail = (type, m, conn) => {
   let name = conn.getName(m.sender)
   let msg = {
-    rowner: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
+    rowner: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Perintah ini hanya untuk developer bot
 ╰─────────────────֍`,
-    owner: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
+    owner: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Perintah ini hanya untuk owner bot
 ╰─────────────────֍`,
-    mods: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
+    mods: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Perintah ini hanya untuk moderator bot
 ╰─────────────────֍`,
-    premium: `╭─֍〔 ıll 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐎𝐍𝐋𝐘 llı 〕֍─
+    premium: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Fitur ini hanya tersedia untuk user *Premium*
 ╰─────────────────֍`,
-    group: `╭─֍〔 ıll 𝐆𝐑𝐎𝐔𝐏 𝐎𝐍𝐋𝐘 llı 〕֍─
+    group: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Fitur ini hanya dapat digunakan didalam grup!!
 ╰─────────────────֍`,
-    private: `╭─֍〔 ıll 𝐏𝐑𝐈𝐕𝐀𝐓𝐄 𝐂𝐇𝐀𝐓 𝐎𝐍𝐋𝐘 llı 〕֍─
+    private: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Fitur ini hanya dapat digunakan diprivate chat
 ╰─────────────────֍`,
-    admin: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
+    admin: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Fitur ini hanya tersedia untuk admin grup!!
 ╰─────────────────֍`,
-    botAdmin: `╭─֍〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕֍─
+    botAdmin: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Fitur ini tidak dapat work, bot tidak menjadi admin
 ╰─────────────────֍`,
     restrict: 'Fitur ini di *disable*!',
