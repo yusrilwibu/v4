@@ -2,7 +2,7 @@ require('./config')
 const {
   useSingleFileAuthState,
   DisconnectReason
-} = require('@adiwajshing/baileys-md')
+} = require('@adiwajshing/baileys')
 const WebSocket = require('ws')
 const path = require('path')
 const fs = require('fs')
@@ -63,7 +63,7 @@ loadDatabase()
 // if (opts['cluster']) {
 //   require('./lib/cluster').Cluster()
 // }
-global.authFile = `${opts._[0] || 'session'}.data.json`
+global.authFile = `${opts._[0] || 'hyzer'}.data.json`
 global.isInit = !fs.existsSync(authFile)
 const { state, saveState } = useSingleFileAuthState(global.authFile)
 
@@ -124,10 +124,10 @@ global.reloadHandler = function (restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate)
   }
 
-  conn.welcome = '*Selamat Datang*\n *di grup* @subject\n\n@desc'
-  conn.bye = '*Yah Kok Out Sih;*'
-  conn.spromote = '@user sekarang admin!'
-  conn.sdemote = '@user sekarang bukan admin!'
+  conn.welcome = '*Welcome To Groub* @subject\n\n*Moga Betah Yah;)*'
+  conn.bye = '*Keluar Tuh Si Beban,Dadahh👋*'
+  conn.spromote = '@user *sekarang admin!*'
+  conn.sdemote = '@user *sekarang bukan admin!*'
   conn.handler = handler.handler.bind(conn)
   conn.participantsUpdate = handler.participantsUpdate.bind(conn)
   conn.onDelete = handler.delete.bind(conn)
