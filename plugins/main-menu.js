@@ -301,7 +301,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             sections: [
               {
                 "rows": [{
-                  "title": `𝗢𝗪𝗡𝗘𝗥`,
+                  "title": "𝗢𝗪𝗡𝗘𝗥",
                   "description": "𝙿𝚎𝚖𝚒𝚕𝚒𝚔 𝙰𝚛𝚞𝚕𝚕𝙱𝚘𝚝𝚣𝙼𝙳,𝚑𝚊𝚗𝚢𝚊 𝚜𝚊𝚟𝚎 𝚗𝚘𝚖𝚘𝚛 𝚌𝚎𝚠𝚎𝚔 𝚢𝚊🗿",
                   "rowId": `.owner`
                   },{
@@ -312,7 +312,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
                   "title": "𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙎𝙄 𝘽𝙊𝙏"
                }, {
                  "rows": [{
-                  "title": `│🧾│ 𝗦𝗘𝗠𝗨𝗔 𝗣𝗘𝗥𝗜𝗡𝗧𝗔𝗛`,
+                  "title": "│🧾│ 𝗦𝗘𝗠𝗨𝗔 𝗣𝗘𝗥𝗜𝗡𝗧𝗔𝗛",
                   "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝚂𝚎𝚖𝚞𝚊 𝙼𝚎𝚗𝚞",
                   "rowId": '.? all'
                   }, {
