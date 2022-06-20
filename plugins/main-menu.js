@@ -545,21 +545,21 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['menu']
 handler.tags = ['main']
-handler.command = /^(menu|help|\?)$/i
+handler.command = /^(alive|panel|Arull|Menu|menu|help|\?)$/i
+handler.register = true
 handler.owner = false
 handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-
+handler.register = true
 handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
 handler.exp = 3
-
 module.exports = handler
 
 //━━━━━━━━[  JANGAN DI UBAH  ]━━━━━━━━//
