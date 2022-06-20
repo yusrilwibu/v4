@@ -2,7 +2,7 @@ let handler = async (m, { conn }) =>
 conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
                     "listMessage":  {
                         "title": `Hai Kak ${conn.getName(m.sender)}\n`,
-                        "description": "\n\n*@zifabotz*",
+                        "description": "\n\n*@ArullBotzMD*",
                         "footerText": "jika ada bug atau erorr Jangan tanya saya,karna saya juga gak tau.",
                         "buttonText": "SETELAN GRUB",
                         "listType": "SINGLE_SELECT",
@@ -70,7 +70,7 @@ conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
 handler.help = ['grubsettings']
 handler.tags = ['group']
 handler.command = /^(setelangrub|grubsett|settingsgrub|grubsettings|settgrub|groupsett)$/i
-handler.owner = false
+handler.owner = true
 handler.mods = false
 handler.premium = false
 handler.group = true
