@@ -580,16 +580,16 @@ function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
   res = "Udah Malam Tidur Gih •>•"
   if (time >= 4) {
-    res = "Selamat pagi kak 🌅"
+    res = "Selamat pagi🌅 kak"
   }
   if (time > 10) {
-    res = "Selamat siang kak 🏜️"
+    res = "Selamat siang🏜️ kak"
   }
   if (time >= 15) {
-    res = "Selamat sore kak 🌄"
+    res = "Selamat sore🌄 kak"
   }
   if (time >= 18) {
-    res = "Selamat malam kak 🌌"
+    res = "Selamat malam🌌 kak"
   }
   return res
 }
