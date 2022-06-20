@@ -1,5 +1,5 @@
 let handler = async (m, { conn }) =>
-conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
+conn.relayWAMessage(
                     "listMessage":  {
                         "title": `Hai Kak ${conn.getName(m.sender)}\n`,
                         "description": "\n\n*@ArullBotzMD*",
