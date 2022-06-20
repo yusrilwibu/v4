@@ -29,12 +29,7 @@ let handler = async (m, { conn, args: [event], text }) => {
     default:
       throw `List Event: welcome, bye, delete, promote, demote`;
   }
-  if (action)
-    return conn.participantsUpdate({
-      id: m.chat,
-      participants,
-      action,
-    });
+ 
   return conn.onDelete(m);
 };
 handler.help = ["simulate <event> [@mention]"];
