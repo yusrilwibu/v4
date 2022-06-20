@@ -20,6 +20,18 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.welcome = isEnable
       break
+    case 'viewonce':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn)
+          throw false
+        }
+      } else if (!(isAdmin || isOwner)) {
+        global.dfail('admin', m, conn)
+        throw false
+      }
+      chat.viewonce = isEnable
+      break
     case 'antilink':
     case 'antiurl':
       if (!m.isGroup) {
