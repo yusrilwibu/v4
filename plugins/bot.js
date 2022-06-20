@@ -6,6 +6,7 @@ let handler = async(m, { conn }) => {
 	fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': require('fs').readFileSync('./src/logo.jpg'), thumbnail: require('fs').readFileSync('./src/logo.jpg'),sendEphemeral: true}}}
 	conn.p[id] = [
 	]
+        { contexInfo: { forwardingScore: 99999, isForwarded: true } })
 	await delay(100)
   return conn.sendMessage(m.chat, { text: `*Hallo kak* @${await m.sender.split('@')[0]}, *ada apa,kok manggil saya^_^*`, mentions: [m.sender] }, { quoted: conn.p[id][0] })
   await delay(100)
