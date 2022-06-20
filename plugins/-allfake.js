@@ -39,7 +39,7 @@ const ftroli = {
                             itemCount : 1,
                             status: 1,
                             surface : 1,
-                            message: 'MikeBot', //Kasih namalu
+                            message: 'ArullOfc', //Kasih namalu
                             orderTitle: 'Bang',
                             thumbnail: fs.readFileSync('./media/siang.jpg'), //Gambarnye
                             sellerJid: '0@s.whatsapp.net'
