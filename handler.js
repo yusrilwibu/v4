@@ -731,18 +731,18 @@ module.exports = {
                 }
                 break
             case 'promote':
-                text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
-            case 'demote':
-                if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
-                text = text.replace('@user', '@' + participants[0].split('@')[0])
-                if (chat.detect) this.sendMessage(id, text, MessageType.extendedText, {
-                    contextInfo: {
-                        mentionedJid: this.parseMention(text)
-                    }
-                })
-                break
-        }
-    },
+        text = (chat.sPromote || this.spromote || conn.spromote || '@user ciee sekarang di Adminin')
+      case 'demote':
+        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user lu sekarang bukan Admin lagi cok')
+        text = text.replace('@user', '@' + participants[0].split`@`[0])
+        if (chat.detect) this.sendMessage(jid, text, MessageType.extendedText, {
+          contextInfo: {
+            mentionedJid: this.parseMention(text)
+          }
+        })
+        break
+    }
+  },
     async delete(m) {
     let chat = global.db.data.chats[m.key.remoteJid]
     if (chat.delete) return
@@ -795,13 +795,13 @@ global.dfail = (type, m, conn) => {
   let name = conn.getName(m.sender)
   let msg = {
     rowner: `╭─֍〔 ıll *WARNING* llı 〕֍─
-⬡ Perintah ini hanya untuk developer bot
+⬡ Perintah ini hanya untuk *ARULLOFC*
 ╰─────────────────֍`,
     owner: `╭─֍〔 ıll *WARNING* llı 〕֍─
-⬡ Perintah ini hanya untuk owner bot
+⬡ Perintah ini hanya untuk *ARULLOFC*
 ╰─────────────────֍`,
     mods: `╭─֍〔 ıll *WARNING* llı 〕֍─
-⬡ Perintah ini hanya untuk moderator bot
+⬡ Perintah ini hanya untuk *ARULLOFC*
 ╰─────────────────֍`,
     premium: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Fitur ini hanya tersedia untuk user *Premium*
@@ -816,7 +816,7 @@ global.dfail = (type, m, conn) => {
 ⬡ Fitur ini hanya tersedia untuk admin grup!!
 ╰─────────────────֍`,
     botAdmin: `╭─֍〔 ıll *WARNING* llı 〕֍─
-⬡ Fitur ini tidak dapat work, bot tidak menjadi admin
+⬡ BOT BUKAN ADMIN
 ╰─────────────────֍`,
     restrict: 'Fitur ini di *disable*!',
     }[type]
