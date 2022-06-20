@@ -126,8 +126,8 @@ global.reloadHandler = function (restatConn) {
 
   conn.welcome = '*Welcome To Groub* @subject\n\n*Moga Betah Yah;)*'
   conn.bye = '*Keluar Tuh Si Beban,Dadahh👋*'
-  conn.spromote = '@user *sekarang admin!*'
-  conn.sdemote = '@user *sekarang bukan admin!*'
+  conn.spromote = '╭──֍ 〔 ıll 𝗔𝗗𝗠𝗜𝗡 𝗚𝗥𝗢𝗨𝗣 llı 〕 ֍───\n│╭───────────\n││─⬣ Name : @user\n││─⬣ Desc : Jagain groupnya\n│╰───────────\n╰─────────────────────\n\njaga groupnya\n👾 Salam dari wa.me/6285822347348'
+  conn.sdemote = '╭──֍ 〔 ıll 𝗨𝗡𝗔𝗗𝗠𝗜𝗡 𝗚𝗥𝗢𝗨𝗣 llı 〕 ֍───\n│╭───────────\n││─⬣ Name : @user\n││─⬣ Desc : kurang kerjasama\n│╰───────────\n╰─────────────────────\n\n👾 kesiann\n👾 Salam dari wa.me/6285822347348'
   conn.handler = handler.handler.bind(conn)
   conn.participantsUpdate = handler.participantsUpdate.bind(conn)
   conn.onDelete = handler.delete.bind(conn)
