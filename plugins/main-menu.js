@@ -499,35 +499,35 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             hydratedFooterText: wm2, 
             hydratedButtons: [{
             urlButton: {
-               displayText: 'Youtube Creator',
+               displayText: 'YOUTUBE ME',
                url: web
              }
 
            },
              {
              urlButton: {
-               displayText: 'Group Ofc ArullBotzMD', 
+               displayText: 'GROUP BOT', 
                url: gc
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'Owner ArullBotzMD',
+               displayText: 'PEMILIK BOT🤖',
                id: '.owner',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'Donasi',
-               id: '.donasi',
+               displayText: 'RULES ARULLBOTZMD',
+               id: '.rules',
              }
 
            },
            {
              quickReplyButton: {
-               displayText: 'Thanks To',
+               displayText: 'THANKS TO',
                id: '.tqto',
              }
            }]
