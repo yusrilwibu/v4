@@ -2,16 +2,16 @@ const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessa
 let fs = require('fs')
 let handler = async (m) => {
 let krizyn = `
-╭─────[ *RULES ArullBotzMD* ]─────
-│•Dilarang Hina Owner
-│•Dilarang Spam 
-│•Dilarang Telp / Vc
-│•Jangan culik bot gw anjing
-│•Bot Tidak Menerima Save Kontak
+╭─────{ *R͓̽U͓̽L͓̽E͓̽S͓̽* }─────
+│•Dιʅαɾαɳɠ Hιɳα Oɯɳҽɾ
+│•Dιʅαɾαɳɠ Sραɱ
+│•Dιʅαɾαɳɠ Tҽʅρ / Vƈ
+│•Jαɳɠαɳ ƈυʅιƙ Ⴆσƚ ɠɯ αɳʝιɳɠ
+│•Bσƚ Tιԃαƙ Mҽɳҽɾιɱα Sαʋҽ Kσɳƚαƙ
 ┬
 ╰──────────···
-╭─────{ *HUKUM* }─────
-│ Kublock Lu anjing
+╭─────{ *H͓̽U͓̽K͓̽U͓̽M͓̽* }─────
+│•KυႦʅσƈƙ Lυ αɳʝιɳɠ
 ╰──────────···
 	`.trim()
   let message = await prepareWAMessageMedia({ image: await (await require('node-fetch')(fotonya2)).buffer()}, { upload: conn.waUploadToServer }) 
