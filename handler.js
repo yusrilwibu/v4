@@ -795,16 +795,16 @@ global.dfail = (type, m, conn) => {
   let name = conn.getName(m.sender)
   let msg = {
     rowner: `╭─֍〔 ıll *WARNING* llı 〕֍─
-⬡ Perintah ini hanya untuk *ARULLOFC*
+⬡ Perintah ini hanya untuk ARULLOFC
 ╰─────────────────֍`,
     owner: `╭─֍〔 ıll *WARNING* llı 〕֍─
-⬡ Perintah ini hanya untuk *ARULLOFC*
+⬡ Perintah ini hanya untuk ARULLOFC
 ╰─────────────────֍`,
     mods: `╭─֍〔 ıll *WARNING* llı 〕֍─
-⬡ Perintah ini hanya untuk *ARULLOFC*
+⬡ Perintah ini hanya untuk ARULLOFC
 ╰─────────────────֍`,
     premium: `╭─֍〔 ıll *WARNING* llı 〕֍─
-⬡ Fitur ini hanya tersedia untuk user *Premium*
+⬡ Fitur ini hanya tersedia untuk user Premium
 ╰─────────────────֍`,
     group: `╭─֍〔 ıll *WARNING* llı 〕֍─
 ⬡ Fitur ini hanya dapat digunakan didalam grup!!
