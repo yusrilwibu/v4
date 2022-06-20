@@ -37,7 +37,7 @@ let krizyn = `
            },
                {
              quickReplyButton: {
-               displayText: 'KOSONG',
+               displayText: 'JANGAN DIPENCET',
                id: '',
              }
              
