@@ -5,39 +5,32 @@ let dana = global.dana
 let pulsa = global.pulsa
 let gopay = global.gopay
 let numberowner = global.numberowner
-let anu = `Hallo mypren 👋
-━━━〔 ıll *Sewa Bot* llı 〕━━㉿
+let anu = `HALLO KAK 👋
+━━━[  *SEWABOT* ]━━
 ━━━━━━━━━━━━━━━━━━━━
-━━━〔 ıll *HARGA* llı 〕━━㉿
-⬡ *1 BULAN* 5.000
-⬡ *PERMANEN 2 grup:* 10.000
-⬡ *PERMANEN 3-6 grup:* 20.000
-⟩» lebih dari 6 tambah +5.000
-📮 *batas scan 5 kali !*
-┗━━━━━━━━━━━━━━━━━━㉿
-┏━━━〔 ıll *PAYMENT* llı 〕━━㉿
-⬡ *DANA:* ${dana}
-⬡ *GOPAY:* ${gopay}
-⬡ *OVO:* ${pulsa}
-⬡ *PULSA:* ${pulsa}
-┗━━━━━━━━━━━━━━━━━━㉿
-┏━━〔 ıll *RULES* llı 〕━㉿
-⬡ [❗] *Dana yang sudah masuk tida bisa di kembalikan*
-⬡ [❗] *Kalau akunmu ke banned bukan urusan saya*
-┗━━━━━━━━━━㉿
-Jika anda berminat hubungi nomor di bawah!!
+━━━[ *HARGA* ]━━
+• *1 MINGGU 1 GROUP* 5.000
+• *1 BULAN 1 GROUP:* 10.000
+• *PERMANEN 1 GROUP:* 20.000
+🤖
+┗━━━━━━━━━━━━━━━━━━
+┏━━━[ *PAYMENT*  ]━━
+• *DANA:* ${dana}
+• *PULSA:* ${pulsa}
+┗━━━━━━━━━━━━━━━━━━
+Jika berminat untuk sewa bot hubungi nomor di bawah!!
 
-⟩» *jangan lupa donasi kak* «⟨
-Terimakasih yang sudah mendonasikan untuk bot
+*jangan lupa donasi kak*
+Terimakasih yang sudah mau donasi
 
 Contact person Sewa Bot:
 wa.me/${numberowner} (Owner)
 
-*Follow Instagram ku juga kak😼*`
-  conn.send3ButtonImg(m.chat, fla + teks, anu, instagram, 'Donasi', '.donasi', 'Owner', '.owner', 'Menu', '.menu', m) 
+*Follow Instagram*`
+  conn.send3ButtonImg(m.chat, fla + teks, anu, instagram, 'DONASI', '.donasi', 'PEMILIK BOT', '.owner', 'MENU', '.menu', m) 
 }
 handler.help = ['sewazifa']
 handler.tags = ['info']
-handler.command = /^(zifasewa|sewazifa)$/i
+handler.command = /^(Arullsewa|Sewaarull)$/i
 
 module.exports = handler
