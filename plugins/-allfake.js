@@ -1,27 +1,83 @@
-/*
- * Hyzer Baik :) 
- * Wkwkk Ini Cuman Buat Pelengkap Doang
- * Bukan Bagian Dari Fitur Deck
- * Sumimasen >,<
-*/
-
-//----------[ FAKE TOKO ]--------//
-const ftoko = {
+let fs = require('fs')
+let fetch = require('node-fetch')
+let handler = m => m
+handler.all = async function (m) {
+	let pp = 'https://telegra.ph/file/2d06f0936842064f6b3bb.png'
+	try {
+		pp = await this.profilePictureUrl(m.sender, 'image')
+	} catch (e) {
+	} finally {
+		global.axios = require('axios')
+		global.request = require('request')
+		global.users = global.db.data.users[m.sender]
+		global.chats = global.db.data.chats[m.chat]
+        
+		global.ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 9999999999999999999999999999999999999999999999999999999, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
+		
+        global.fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': require('fs').readFileSync('./src/logo.jpg'), thumbnail: require('fs').readFileSync('./src/logo.jpg'),sendEphemeral: true}}}
+        
+        global.fvn = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "6282331033919-1625305606@g.us" } : {}) 
+                },
+	 message: { 
+		"audioMessage": {
+                 "mimetype":"audio/ogg; codecs=opus",
+                 "seconds": "999999999999",
+                 "ptt": "true"
+                        }
+	                  } 
+                     }
+        
+         global.ftextt = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "6282331033919-1625305606@g.us" } : {}) 
+                },
+	 message: { 
+		"extendedTextMessage": {
+                 "text":wm,
+                 "title": wm,
+                 'jpegThumbnail': fs.readFileSync('./src/logo.jpg')
+                        }
+	                  } 
+                     }
+        
+           global.fliveLoc = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat  ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "liveLocationMessage": { "caption":"by : The.sad.boy01","h": `${wm}`, 'jpegThumbnail': fs.readFileSync('./src/logo.jpg')}}
+	}
+        
+	       global.fliveLoc2 = {
+	 key:
+	 { fromMe: false,
+	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "status@broadcast" } : {}) },
+	 message: { "liveLocationMessage": { "title": "the.sad.boy01","h": wm, 'jpegThumbnail': fs.readFileSync('./src/logo.jpg')}}
+	}
+        
+            global.ftoko = {
 key: {
 			fromMe: false,
-			participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "0@s.whatsapp.net" } : {})
+			participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "6282331033919@s.whatsapp.net" } : {})
 		},
 		message: {
 			"productMessage": {
 				"product": {
 					"productImage":{
 						"mimetype": "image/jpeg",
-						"jpegThumbnail": fs.readFileSync('./media/siang.jpg') //Gambarnye
+						"jpegThumbnail": fs.readFileSync('./src/logo.jpg') //Gambarnye
 					},
-					"title": "MikeBot", //Kasih namalu 
-					"description": "SELF BOT", 
+					"title": wm, //Kasih namalu 
+					"description": namabot, 
 					"currencyCode": "USD",
-					"priceAmount1000": "2000",
+					"priceAmount1000": "20000000",
 					"retailerId": "Ghost",
 					"productImageCount": 1
 				},
@@ -29,108 +85,20 @@ key: {
 		}
 	}
 }
-//----------[ FAKE TROLI ]--------//
-const ftroli = {
-	key : {
-                          participant : '0@s.whatsapp.net'
-                        },
-       message: {
-                    orderMessage: {
-                            itemCount : 1,
-                            status: 1,
-                            surface : 1,
-                            message: 'ArullOfc', //Kasih namalu
-                            orderTitle: 'Bang',
-                            thumbnail: fs.readFileSync('./media/siang.jpg'), //Gambarnye
-                            sellerJid: '0@s.whatsapp.net'
-          
-                          }
-                        }
-                      }
-//----------[ FAKE LOKASI ]--------//
-const flokasi = {
-	key : {
-           participant : '0@s.whatsapp.net'
-                        },
-       message: {
-                    locationMessage: {
-                    name: 'Russia',
-                    jpegThumbnail: fs.readFileSync('./media/siang.jpg')
-                          }
-                        }
-                      }
-                      
-const floc = {
-	 key:
-	 { fromMe: false,
-	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
-	 { remoteJid: "status@broadcast" } : {}) },
-	 message: { "locationMessage": { "title":"jakarta","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./media/siang.jpg')}}
-	}
-	
-const fliveLoc = {
-	 key:
-	 { fromMe: false,
-	 participant: `0@s.whatsapp.net`, ...(m.chat  ? 
-	 { remoteJid: "status@broadcast" } : {}) },
-	 message: { "liveLocationMessage": { "caption":"ANTIBOT","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./media/siang.jpg')}}
-	}
-	const fliveLoc2 = {
-	 key:
-	 { fromMe: false,
-	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
-	 { remoteJid: "status@broadcast" } : {}) },
-	 message: { "liveLocationMessage": { "title": "ANTIBOT","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./media/siang.jpg')}}
-	}
-//FAKEREPLY KONTAK
- const fcon = {
-	 key:
-	 { fromMe: false,
-	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
-	 { remoteJid: "status@broadcast" } : {}) },
-	 message: { "contactMessage": { "title":"sri","h": `haloo`, 'jpegThumbnail': fs.readFileSync('./media/siang.jpg')}}
-	}
-	
-	const fcona = {
-	 key:
-	 { fromMe: false,
-	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
-	 { remoteJid: "status@broadcast" } : {}) },
-	 message: { "contactsArrayMessage": { "title":"antibot","h": `aloo`, 'jpegThumbnail': fs.readFileSync('./media/siang.jpg')}}
-	}
-	const bugcon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) }, message: { "contactMessage": { "vcard": ""}}}
-	
-//----------[ FAKE DOC ]--------//
-const fdocs = {
+        
+              global.fdocs = {
 	key : {
            participant : '0@s.whatsapp.net'
                         },
        message: {
                     documentMessage: {
-                    title: 'Halo bang', 
-                    jpegThumbnail: fs.readFileSync('./media/siang.jpg')
+                    title: wm, 
+                    jpegThumbnail: fs.readFileSync('./src/logo.jpg')
                           }
                         }
                       }
-//----------[ FAKE VIDEO ]--------//
-const fvideo = {
-	 key: { 
-          fromMe: false,
-	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
-	 { remoteJid: "0-1625305606@g.us" } : {}) 
-                },
-	 message: { 
-                 "videoMessage": { 
-                 "title":"hallo bang",
-                 "h": `Hmm`,
-                 'seconds': '99999', 
-                 'caption': 'Halo bang',
-                 'jpegThumbnail': fs.readFileSync('./media/siang.jpg')
-                        }
-                       }
-	                  }
-//----------[ FAKE GC ]--------//
-const fgclink = {
+        
+             global.fgclink = {
 	"key": {
 		"fromMe": false,
 		"participant": "0@s.whatsapp.net",
@@ -138,59 +106,51 @@ const fgclink = {
 	},
 	"message": {
 		"groupInviteMessage": {
-			"groupJid": "0-1625305606@g.us",
-			"inviteCode": "mememteeeekkeke",
-			"groupName": "Mengter", 
-            "caption": "Halo bang jagoo", 
-            'jpegThumbnail': fs.readFileSync('./media/siang.jpg')
+			"groupJid": "6282331033919-1625305606@g.us",
+			"inviteCode": "null",
+			"groupName": "☬𝚁𝚊𝚡𝚌𝚎𝚕 ༼༽𝚡 𝚎𝚟𝚒𝚕 𝐎𝔣ᶜ ◉", 
+            "caption": `╭─${kki}RULES BOT${kka}
+│
+├❒ DILARANG TOXIC
+├❒ DILARANG SPAM
+├❒ DILARANG KIRIM VIRTEX
+├❒ DILARANG KIRIM 18+ APAPUN ITU
+├❒ DILARANG TELPON / VC
+├❒ DILARANG CULIK BOT
+├❒ DILARANG PROMOSI
+├❒ BOT TIDAK MENERIMA SAVE KONTAK
+│
+├❏ KALO MELANGGAR AKAN LANGSUNG DIBAN DAN DI BLOKIR TANPA TOLERANSI SEDIKIT PUN
+│
+└─${kki}RULES BOT${kka}`, 
+            'jpegThumbnail': fs.readFileSync('./src/logo.jpg')
 		}
 	}
 }
-//----------[ FAKE GIF  ]--------//
-const fgif = {
+
+             global.fgif = {
 	 key: { 
           fromMe: false,
 	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
-	 { remoteJid: "0-1625305606@g.us" } : {}) 
+	 { remoteJid: "6282331033919-1625305606@g.us" } : {}) 
                 },
 	 message: { 
                  "videoMessage": { 
-                 "title":"hallo bang",
+                 "title": wm,
                  "h": `Hmm`,
-                 'seconds': '99999', 
+                 'seconds': '999999999', 
                  'gifPlayback': 'true', 
-                 'caption': 'Halo bang',
-                 'jpegThumbnail': fs.readFileSync('./media/siang.jpg')
+                 'caption': wm,
+                 'jpegThumbnail': fs.readFileSync('./src/logo.jpg')
                         }
                        }
-	                  } 
-//----------[ FAKE TEXT  ]--------//
-const ftextt = {
-	 key: { 
-          fromMe: false,
-	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
-	 { remoteJid: "0-1625305606@g.us" } : {}) 
-                },
-	 message: { 
-		"extendedTextMessage": {
-                 "text":"hallo bang",
-                 "title": `Hmm`,
-                 'jpegThumbnail': fs.readFileSync('./media/siang.jpg')
-                        }
-	                  } 
-                     }
-//----------[ FAKE VN  ]--------//
-const fvn = {
-	 key: { 
-          fromMe: false,
-	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
-	 { remoteJid: "0-1625305606@g.us" } : {}) 
-                },
-	 message: { 
-		"audioMessage": {
-                 "mimetype":"audio/ogg; codecs=opus",
-                 "seconds": "${second}",
-                 "ptt": "true"
-                        }
-	                  } 
-                     }
+	                  }
+       
+        global.fake = pickRandom(global.fak)
+        
+        global.fak = [ fvn, fgif, ftroli, fgclink, fliveLoc, fliveLoc2, fdocs, ftoko, ftextt, fkontak ]
+		// Tambahin ya
+	}
+}
+
+module.exports = handler
