@@ -301,137 +301,131 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             sections: [
               {
                 "rows": [{
-                  "title": "𝗢𝗪𝗡𝗘𝗥",
-                  "description": "𝙿𝚎𝚖𝚒𝚕𝚒𝚔 𝙰𝚛𝚞𝚕𝚕𝙱𝚘𝚝𝚣𝙼𝙳,𝚑𝚊𝚗𝚢𝚊 𝚜𝚊𝚟𝚎 𝚗𝚘𝚖𝚘𝚛 𝚌𝚎𝚠𝚎𝚔 𝚢𝚊🗿",
+                  "title": ` 👨 OWNER BOT`,
+                  "description": "Nomor Pemilik Bot Chat P/Meminta Save Tidak Akan Di Respon",
                   "rowId": `.owner`
-                  },{
-                  "title": "🤖 𝗜𝗡𝗙𝗢 𝗔𝗥𝗨𝗟𝗟𝗕𝗢𝗧𝗭𝗠𝗗",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙸𝚗𝚏𝚘",
+                },{
+                  "title": "❗ INFO BOT",
+                  "description": "Menampilkan Menu Info",
                   "rowId": `${_p}? info`
-                  }],
-                  "title": "𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙎𝙄 𝘽𝙊𝙏"
-               }, {
-                 "rows": [{
-                  "title": "│🧾│ 𝗦𝗘𝗠𝗨𝗔 𝗣𝗘𝗥𝗜𝗡𝗧𝗔𝗛",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝚂𝚎𝚖𝚞𝚊 𝙼𝚎𝚗𝚞",
+                }],
+                "title": "INFORMASI BOT"
+              }, {
+                "rows": [{
+                  "title": `│🧾│ SEMUA PERINTAH`,
+                  "description": "Menampilkan Menu All",
                   "rowId": '.? all'
                   }, {
-                  "title": "│ 📝│ 𝗔𝗕𝗦𝗘𝗡 & 𝗩𝗢𝗧𝗜𝗡𝗚 ",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙰𝚋𝚜𝚎𝚗",
+                  "title": "│ 📝│ ABSEN & VOTING",
+                  "description": "Menampilkan Menu Absen",
                   "rowId": `${_p}? absen`
-                  }, {
-                  "title": "│⛩️│ 𝗔𝗡𝗜𝗠𝗘",
+                }, {
+                  "title": "│⛩️│ANIME",
                   "description": "Menampilkan Menu Anime",
                   "rowId": `${_p}? anime`
                 }, {
                   "title": "│🎇│STICKER & CONVERTER",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝚂𝚝𝚒𝚌𝚔𝚎𝚛",
+                  "description": "Menampilkan Menu Sticker",
                   "rowId": `${_p}? sticker`
                 }, {
-                  "title": "│📺│ 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙳𝚘𝚠𝚗𝚕𝚘𝚊𝚍𝚎𝚛
-",
+                  "title": "│📺│DOWNLOADER",
+                  "description": "Menampilkan Menu Downloader",
                   "rowId": `${_p}? downloader`
                 }, {
-                  "title": "│📈│𝗘𝗫𝗣 & 𝗟𝗜𝗠𝗜𝗧",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙴𝚡𝚙",
+                  "title": "│📈│EXP & LIMIT",
+                  "description": "Menampilkan Menu Exp",
                   "rowId": `${_p}? xp`
                 }, {
-                  "title": "│🐣│𝗙𝗨𝗡",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙵𝚞𝚗",
+                  "title": "│🐣│FUN",
+                  "description": "Menampilkan Menu Fun",
                   "rowId": `${_p}? fun`
                 }, {
-                  "title": "│🎮│𝗚𝗔𝗠𝗘",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙶𝚊𝚖𝚎",
+                  "title": "│🎮│GAME",
+                  "description": "Menampilkan Menu Game",
                   "rowId": `${_p}? game`
                 }, {
-                  "title": "│🧰│𝗚𝗜𝗧𝗛𝗨𝗕",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙶𝚒𝚝𝚑𝚞𝚋
-",
+                  "title": "│🧰│GITHUB",
+                  "description": "Menampilkan Menu Github",
                   "rowId": `${_p}? github`
                 }, {
-                  "title": "│🏢│ 𝗚𝗥𝗢𝗨𝗣",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙶𝚛𝚘𝚞𝚙",
+                  "title": "│🏢│GROUP",
+                  "description": "Menampilkan Menu Group",
                   "rowId": `${_p}? group`
                 }, {
-                  "title": "│🖼│𝗜𝗠𝗔𝗚𝗘",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙸𝚖𝚊𝚐𝚎",
+                  "title": "│🖼│IMAGE",
+                  "description": "Menampilkan Menu Image",
                   "rowId": `${_p}? image`
                 }, {
-                  "title": "│📡│𝗜𝗡𝗧𝗘𝗥𝗡𝗘𝗧",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙸𝚗𝚝𝚎𝚛𝚗𝚎𝚝
-",
+                  "title": "│📡│INTERNET",
+                  "description": "Menampilkan Menu Internet",
                   "rowId": `${_p}? internet`
                 }, {
-                  "title": "│🕋│ 𝗜𝗦𝗟𝗔𝗠𝗜𝗖",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙸𝚜𝚕𝚊𝚖",
+                  "title": "│🕋│ISLAMIC",
+                  "description": "Menampilkan Menu Islam",
                   "rowId": `${_p}? islam`
                 }, {
-                  "title": "│🐚│𝗞𝗘𝗥𝗔𝗡𝗚",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙺𝚎𝚛𝚊𝚗𝚐
-",
+                  "title": "│🐚│KERANG",
+                  "description": "Menampilkan Menu Kerang",
                   "rowId": `${_p}? kerang`
                 }, {
-                  "title": "│✒️│𝗠𝗔𝗞𝗘𝗥",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙼𝚊𝚔𝚎𝚛",
+                  "title": "│✒️│MAKER",
+                  "description": "Menampilkan Menu Maker",
                   "rowId": `${_p}? maker`
                 }, {
-                  "title": "│👨‍💻│𝗢𝗪𝗡𝗘𝗥",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙺𝚑𝚞𝚜𝚞𝚜 𝙰𝚛𝚞𝚕𝚕𝙾𝚏𝚌",
+                  "title": "│👨‍💻│OWNER",
+                  "description": "Menampilkan Menu Owner",
                   "rowId": `${_p}? owner`
                 }, {
-                  "title": "│🎙│𝗣𝗘𝗡𝗚𝗨𝗕𝗔𝗛 𝗦𝗨𝗔𝗥𝗔",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝚅𝚘𝚒𝚌𝚎 𝙲𝚑𝚊𝚗𝚐𝚎𝚛",
+                  "title": "│🎙│PENGUBAH SUARA",
+                  "description": "Menampilkan Menu Voice Changer",
                   "rowId": `${_p}? suara`
                 }, {
-                  "title": "│🔝│𝗣𝗥𝗘𝗠𝗜𝗨𝗠",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙿𝚛𝚎𝚖𝚒𝚞𝚖",
+                  "title": "│🔝│PREMIUM",
+                  "description": "Menampilkan Menu Premium",
                   "rowId": `${_p}? premium`
                 }, {
-                  "title": "│📑│𝗤𝗨𝗢𝗧𝗘𝗦",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝚀𝚞𝚘𝚝𝚎𝚜",
+                  "title": "│📑│QUOTES",
+                  "description": "Menampilkan Menu Quotes",
                   "rowId": `${_p}? quotes`
                 }, {
-                  "title": "│🌱│𝗥𝗣𝗚",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝚁𝚙𝚐",
+                  "title": "│🌱│RPG",
+                  "description": "Menampilkan Menu Rpg",
                   "rowId": `${_p}? rpg`
                 }, {
-                  "title": "│🐾│𝗦𝗧𝗔𝗟𝗞𝗘𝗥",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝚂𝚝𝚊𝚕𝚔𝚎𝚛",
+                  "title": "│🐾│STALKER",
+                  "description": "Menampilkan Menu Stalker",
                   "rowId": `${_p}? stalk`
                 }, {
-                  "title": "│🔗│𝗦𝗛𝗢𝗥𝗧 𝗟𝗜𝗡𝗞",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝚂𝚑𝚘𝚛𝚝 𝙻𝚒𝚗𝚔",
+                  "title": "│🔗│SHORT LINK",
+                  "description": "Menampilkan Menu Short Link",
                   "rowId": `${_p}? shortlink`
                 }, {
-                  "title": "│🛠│𝗧𝗢𝗢𝗟𝗦 𝗠𝗘𝗡𝗨",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝚃𝚘𝚘𝚕𝚜",
+                  "title": "│🛠│TOOLS MENU",
+                  "description": "Menampilkan Menu Tools",
                   "rowId": `${_p}? tools`
                 }, {
-                  "title": "│📃│𝗧𝗘𝗫𝗧 𝗠𝗔𝗞𝗘𝗥",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚊𝚔𝚎𝚛 𝚃𝚎𝚡𝚝",
+                  "title": "│📃│TEXT MAKER",
+                  "description": "Menampilkan Maker Text",
                   "rowId": `${_p}? text`
                 }, {
-                  "title": "│🧼│𝗛𝗘𝗡𝗧𝗔𝗜",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝙷𝚎𝚗𝚝𝚊𝚒
-",
+                  "title": "│🧼│HENTAI",
+                  "description": "Menampilkan Menu Hentai",
                   "rowId": `${_p}? nsfw`
                 }, {
-                  "title": "│🌚│𝗥𝗔𝗡𝗗𝗢𝗠",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙼𝚎𝚗𝚞 𝚁𝚊𝚗𝚍𝚘𝚖/𝙶𝚊𝚋𝚞𝚝",
+                  "title": "│🌚│RANDOM",
+                  "description": "Menampilkan Menu Random/Gabut",
                   "rowId": `${_p}? random`
                 }, {
-                  "title": "│⛄│𝗧𝗘𝗫𝗧 𝗣𝗥𝗢",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝚃𝚎𝚡𝚝 𝙿𝚛𝚘 𝙼𝚎𝚗𝚞",
+                  "title": "│⛄│TEXT PRO",
+                  "description": "Menampilkan Text Pro Menu",
                   "rowId": `${_p}? textpro`
                 }, {
-                  "title": "│💨│𝗣𝗛𝗢𝗧𝗢 𝗢𝗫𝗬",
-                  "description": "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙿𝚑𝚘𝚝𝚘 𝙾𝚡𝚢 𝙼𝚎𝚗𝚞
-",
+                  "title": "│💨│PHOTO OXY",
+                  "description": "Menampilkan Photo Oxy Menu",
                   "rowId": `${_p}? textpro`
                 }
                   ],
-                "title": "𝙎𝙞𝙡𝙖𝙝𝙠𝙖𝙣 𝘿𝙞𝙥𝙞𝙡𝙞𝙝"
+                "title": "SILAHKAN DIPILIH"
               }
             ], "contextInfo": {
               "stanzaId": m.key.id,
