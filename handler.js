@@ -441,7 +441,6 @@ module.exports = {
                     simi: false,
                     viewonce: true,
                     antiToxic: true,
-                    anticall: true
                 }
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
