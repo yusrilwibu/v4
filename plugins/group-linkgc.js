@@ -12,13 +12,13 @@ let handler = async (m, { conn, args }) => {
 handler.help = ['linkgroup']
 handler.tags = ['group']
 handler.command = /^link(gro?up)?$/i
-handler.owner = true
+handler.owner = false
 handler.mods = false
 handler.premium = false
-handler.group = true
+handler.group = false
 handler.private = false
 
-handler.admin = fals
+handler.admin = false
 handler.botAdmin = true
 
 handler.fail = null
