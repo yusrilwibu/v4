@@ -10,7 +10,7 @@ let usr = m.quoted.sender;
 let nenen = await conn.groupParticipantsUpdate(m.chat, [usr], "demote"); return;
 if (nenen) m.reply(`sukses demote @${user.split('@')[0]}!`)
 }
-  if (!m.mentionedJid[0]) throw `Siapa yg mau di Undaminin?`;
+  if (!m.mentionedJid[0]) throw `*Siapa yg mau di Undaminin?*`;
   let users = m.mentionedJid.filter(
     (u) => !(u == ownerGroup || u.includes(conn.user.jid))
   );
