@@ -31,6 +31,6 @@ wa.me/${numberowner} (Owner)
 }
 handler.help = ['sewazifa']
 handler.tags = ['info']
-handler.command = /^(Arullsewa|Sewaarull)$/i
+handler.command = /^(sewa|sewabot|Arullsewa|Sewaarull)$/i
 
 module.exports = handler
