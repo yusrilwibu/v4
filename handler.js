@@ -423,8 +423,8 @@ module.exports = {
                     if (!('detect' in chat)) chat.detect = true
                     if (!('sWelcome' in chat)) chat.sWelcome = ''
                     if (!('sBye' in chat)) chat.sBye = ''
-                    if (!('sPromote' in chat)) chat.sPromote = ''
-                    if (!('sDemote' in chat)) chat.sDemote = ''
+                    if (!('sPromote' in chat)) chat.sPromote = true
+                    if (!('sDemote' in chat)) chat.sDemote = true
                     if (!('desc' in chat)) chat.desc = true
                     if (!('descUpdate' in chat)) chat.descUpdate = true
                     if (!('stiker' in chat)) chat.stiker = true
@@ -449,8 +449,8 @@ module.exports = {
                     detect: true,
                     sWelcome: '',
                     sBye: '',
-                    sPromote: '',
-                    sDemote: '',
+                    sPromote: true,
+                    sDemote: true,
                     desc: true,
                     descUpdate: true,
                     stiker: true,
@@ -756,17 +756,28 @@ module.exports = {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                       let pp = './src/welcome.jpg'
+                       let pp = 'https://telegra.ph/file/a8e1223664c3aa3f759fb.png'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
                         } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
-                                (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang 1'))
-                                this.sendButtonLoc(id, await(await fetch(pp)).buffer(), text, '', "ok", "huuu", null)
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup @user').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
+                                (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang @user!')).replace('@user', '@' + user.split('@')[0])
+                                this.sendButtonImg(id, pp, text, "©️ message by ArullOfc", "Okee", "nani", null)
                                 }
                     }
                 }
+                break
+            case 'promote':
+                text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+            case 'demote':
+                if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+                text = text.replace('@user', '@' + participants[0].split('@')[0])
+                if (chat.detect) this.sendMessage(id, text, MessageType.extendedText, {
+                    contextInfo: {
+                        mentionedJid: this.parseMention(text)
+                    }
+                })
                 break
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
@@ -801,19 +812,47 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
-        owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
-        mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
-        premium: 'Perintah ini hanya untuk member _*Premium*_ !',
-        group: 'Perintah ini hanya dapat digunakan di grup!',
-        private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
-        admin: 'Perintah ini hanya untuk *Admin* grup!',
-        botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
-        unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
-        restrict: 'Fitur ini di *disable*!'
+        rowner: `╭─֍〔 ıll *KHUSUS ARULLOFC* llı 〕֍─
+⬡ Perintah ini hanya untuk developer bot
+╰─────────────────֍`,
+    owner: `╭─֍〔 ıll *KHUSUS ARULLOFC* llı 〕֍─
+⬡ Perintah ini hanya untuk owner bot
+╰─────────────────֍`,
+    mods: `╭─֍〔 ıll *KHUSUS ARULLOFC* llı 〕֍─
+⬡ Perintah ini hanya untuk moderator bot
+╰─────────────────֍`,
+    premium: `╭─֍〔 ıll *KHUSUS PREMIUM* llı 〕֍─
+⬡ Fitur ini hanya tersedia untuk user *Premium*
+╰─────────────────֍`,
+    group: `╭─֍〔 ıll *KHUSUS GROUP* llı 〕֍─
+⬡ Fitur ini hanya dapat digunakan didalam grup!!
+╰─────────────────֍`,
+    private: `╭─֍〔 ıll *PRIVATE CHAT* llı 〕֍─
+⬡ Fitur ini hanya dapat digunakan diprivate chat
+╰─────────────────֍`,
+    admin: `╭─֍〔 ıll *KHUSUS ADMIN* llı 〕֍─
+⬡ Fitur ini hanya tersedia untuk admin grup!!
+╰─────────────────֍`,
+    botAdmin: `╭─֍〔 ıll BOT HARUS ADMIN llı 〕֍─
+⬡ Fitur ini tidak dapat work, bot tidak menjadi admin
+╰─────────────────֍`,
+    restrict: 'Fitur ini di *disable*!',
     }[type]
-    if (msg) return m.reply(msg)
-}
+  if (msg) return conn.sendBut(m.chat, msg, '❑ Silahkan klik menu dibawah ini', 'Menu', '.menu', m)
+ let unreg = {
+  unreg: `
+┏━━━〔 ıll 𝐑𝐄𝐆𝐈𝐒𝐓𝐄𝐑 llı 〕━━❑
+⬡ Hallo mypren👋, @${m.sender.split`@`[0]}
+⬡ Sebelum melihat fitur bot, lebih baik register dulu
+⬡ Kalau tidak kelihatan button nya, contohnya dibawah!
+┗━━━━━━━━━━━━━━━━━━❑
+┏━━〔 ıll CONTOH llı 〕━❑
+⬡ #daftar namamu.umurmu
+⬡ #daftar @${m.sender.split`@`[0]}.18
+┗━━━━━━━━━━❑ `
+  }[type]
+ if (unreg) return conn.sendBut(m.chat, unreg, '❑ Silahkan Klik reg dibawah ini ❑', 'Register', `.daftar @${m.sender.split`@`[0]}.18`, m)
+ }
 
 let fs = require('fs')
 let chalk = require('chalk')
