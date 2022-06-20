@@ -1,23 +1,31 @@
-let handler = async (m, { conn, participants }) => {
-
-  let members = participants.filter(member => !member.isAdmin).map(member => member.jid)
-
-  let users = m.mentionedJid.filter(user => members.includes(user))
-
-  for (let user of users) await conn.groupMakeAdmin(m.chat, [user]).catch(console.log)
-
+let handler = async (m, { teks, conn, isOwner, isAdmin, args }) => {
+	if (!(isAdmin || isOwner)) {
+                global.dfail('admin', m, conn)
+                throw false
+                }
+  let ownerGroup = m.chat.split`-`[0] + "@s.whatsapp.net";
+  if(m.quoted){
+if(m.quoted.sender === ownerGroup || m.quoted.sender === conn.user.jid) return;
+let usr = m.quoted.sender;
+let nenen = await conn.groupParticipantsUpdate(m.chat, [usr], "promote"); return;
+if (nenen) m.reply(`sukses promote @${user.split('@')[0]}!`);
 }
+  if (!m.mentionedJid[0]) throw `tag yang mau dinaikan jabatannya`;
+  let users = m.mentionedJid.filter(
+    (u) => !(u == ownerGroup || u.includes(conn.user.jid))
+  );
+  for (let user of users)
+    if (user.endsWith("@s.whatsapp.net"))
+      await conn.groupParticipantsUpdate(m.chat, [user], "promote");
+};
 
-handler.help = ['promote','admin','^', '↑'].map(v => v + ' @user')
-
-handler.tags = ['admin']
-
-handler.command = /^(promote|admin|\^|↑)$/i
+handler.help = ['promote @user']
+handler.tags = ['group', 'owner']
+handler.command = /^(promo?te|admin|\^)$/i
 
 handler.group = true
-
-handler.admin = true
-
 handler.botAdmin = true
+handler.admin = true
+handler.fail = null
 
 module.exports = handler
