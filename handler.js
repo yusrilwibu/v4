@@ -427,7 +427,7 @@ module.exports = {
                     if (!('simi' in chat)) chat.simi = false
                     if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('antiToxic' in chat)) chat.antiToxic = true
-                    if (!'anticall' in settings) settings.anticall = true
+                    if (!('badword' in chat)) chat.badword = false
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
@@ -441,6 +441,7 @@ module.exports = {
                     simi: false,
                     viewonce: true,
                     antiToxic: true,
+                    antibadword: false
                 }
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
@@ -448,10 +449,12 @@ module.exports = {
               if (!'anticall' in settings) settings.anticall = true
               if (!'antispam' in settings) settings.antispam = true
               if (!'antitroli' in settings) settings.antitroli = true
+              if (!'restrict' in settings) settings.restrict = false
            } else global.db.data.settings[this.user.jid] = {
               anticall: true,
               antispam: true,
               antitroli: true,
+              restrict: false
             }
             } catch (e) {
                 console.error(e)
