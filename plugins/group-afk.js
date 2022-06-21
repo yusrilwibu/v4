@@ -1,28 +1,13 @@
-let handler = m => m
-handler.before = function (m) {
+let handler = async(m, { text }) => {
     let user = global.db.data.users[m.sender]
-    if (user.afk > -1) {
-        this.sendTemplateButtonDoc(m.chat, img, `
-Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
-Selama ${this.clockString(new Date - user.afk)}
-`.trim(), wm, `Menu`, `.menu`, m)
-        user.afk = -1
-        user.afkReason = ''
-    }
-    let jids = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
-    for (let jid of jids) {
-        let user = global.db.data.users[jid]
-        if (!user) continue
-        let afkTime = user.afk
-        if (!afkTime || afkTime < 0) continue
-        let reason = user.afkReason || ''
-        this.sendTemplateButtonDoc(m.chat, img, `
-Jangan tag dia!
-Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
-Selama ${this.clockString(new Date - afkTime)}
-`.trim(), wm, 'Menu', '.menu', m)
-    }
-    return true
+    user.afk = +new Date
+    user.afkReason = text
+    m.reply(`
+${conn.getName(m.sender)} is now AFK${text ? ': ' + text : ''}
+`)
 }
+handler.help = ['afk [alasan]']
+handler.tags = ['main']
+handler.command = /^afk$/i
 
 module.exports = handler
