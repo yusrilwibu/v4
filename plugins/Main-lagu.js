@@ -14,7 +14,7 @@ hyzer = {
         }
        } 
      }
-conn.sendAudio(m.chat, 'https://file.io/1BZKHiUuKXgL', hyzer, { packname: "sticker by", author: "ArullOfc" })
+conn.sendFile(m.chat, 'https://file.io/1BZKHiUuKXgL', hyzer, { packname: "sticker by", author: "ArullOfc" })
 }
 
 handler.customPrefix = /^(Tes)$/i
