@@ -417,18 +417,34 @@ module.exports = {
                 let chat = global.db.data.chats[m.chat]
                 if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
                 if (chat) {
-                  if (!('isBanned' in chat)) chat.isBanned = false
+                  'closeGroup' in chat)) chat.closeGroup = false
+                    if (!isNumber(chat.add)) chat.add = 0
+                    if (!('isBanned' in chat)) chat.isBanned = false
                     if (!('welcome' in chat)) chat.welcome = true
                     if (!('detect' in chat)) chat.detect = true
                     if (!('sWelcome' in chat)) chat.sWelcome = ''
                     if (!('sBye' in chat)) chat.sBye = ''
                     if (!('sPromote' in chat)) chat.sPromote = ''
                     if (!('sDemote' in chat)) chat.sDemote = ''
+                    if (!('desc' in chat)) chat.desc = true
+                    if (!('descUpdate' in chat)) chat.descUpdate = true
+                    if (!('stiker' in chat)) chat.stiker = true
                     if (!('delete' in chat)) chat.delete = true
                     if (!('antiLink' in chat)) chat.antiLink = true
+                    if (!isNumber(chat.expired)) chat.expired = 0
+                    if (!('antiBadword' in chat)) chat.antiBadword = true
+                    if (!('antispam' in chat)) chat.antispam = true
+                    if (!('antitroli' in chat)) chat.antitroli = false
+                    if (!('antivirtex' in chat)) chat.antivirtex = false
                     if (!('viewonce' in chat)) chat.viewonce = true
-                    if (!('antiToxic' in chat)) chat.antiToxic = true
+                    if (!('nsfw' in chat)) chat.nsfw = false
+                    if (!('simi' in chat)) chat.simi = false
+                    if (!('clear' in chat)) chat.clear = false
+                    if (!isNumber(chat.cleartime)) chat.clearTime = 0 
                 } else global.db.data.chats[m.chat] = {
+                    name: this.getName(m.chat),
+                    closeGroup: false,
+                    add: 0,
                     isBanned: false,
                     welcome: true,
                     detect: true,
@@ -436,10 +452,21 @@ module.exports = {
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
+                    desc: true,
+                    descUpdate: true,
+                    stiker: true,
                     delete: true,
                     antiLink: true,
+                    expired: 0,
+                    antiBadword: true,
+                    antispam: true,
+                    antitroli: false,
+                    antivirtex: false,
                     viewonce: true,
-                    antiToxic: true,
+                    nsfw: false,
+                    simi: false,
+                    clear: false,
+                    clearTime: 0
                 }
             } catch (e) {
                 console.error(e)
