@@ -416,9 +416,6 @@ module.exports = {
                 let chat = global.db.data.chats[m.chat]
                 if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
                 if (chat) {
-                    if (!('name' in chat)) chat.name = this.getName(m.chat)
-                    if (!('closeGroup' in chat)) chat.closeGroup = false
-                    if (!isNumber(chat.add)) chat.add = 0
                     if (!('isBanned' in chat)) chat.isBanned = false
                     if (!('welcome' in chat)) chat.welcome = true
                     if (!('detect' in chat)) chat.detect = true
@@ -426,25 +423,11 @@ module.exports = {
                     if (!('sBye' in chat)) chat.sBye = ''
                     if (!('sPromote' in chat)) chat.sPromote = ''
                     if (!('sDemote' in chat)) chat.sDemote = ''
-                    if (!('desc' in chat)) chat.desc = true
-                    if (!('descUpdate' in chat)) chat.descUpdate = true
-                    if (!('stiker' in chat)) chat.stiker = true
                     if (!('delete' in chat)) chat.delete = true
                     if (!('antiLink' in chat)) chat.antiLink = true
-                    if (!isNumber(chat.expired)) chat.expired = 0
-                    if (!('antiBadword' in chat)) chat.antiBadword = true
-                    if (!('antispam' in chat)) chat.antispam = true
-                    if (!('antitroli' in chat)) chat.antitroli = false
-                    if (!('antivirtex' in chat)) chat.antivirtex = false
                     if (!('viewonce' in chat)) chat.viewonce = true
-                    if (!('nsfw' in chat)) chat.nsfw = false
-                    if (!('simi' in chat)) chat.simi = false
-                    if (!('clear' in chat)) chat.clear = false
-                    if (!isNumber(chat.cleartime)) chat.clearTime = 0 
+                    if (!('antiToxic' in chat)) chat.antiToxic = true
                 } else global.db.data.chats[m.chat] = {
-                    name: this.getName(m.chat),
-                    closeGroup: false,
-                    add: 0,
                     isBanned: false,
                     welcome: true,
                     detect: true,
@@ -452,21 +435,10 @@ module.exports = {
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    desc: true,
-                    descUpdate: true,
-                    stiker: true,
                     delete: true,
                     antiLink: true,
-                    expired: 0,
-                    antiBadword: true,
-                    antispam: true,
-                    antitroli: false,
-                    antivirtex: false,
                     viewonce: true,
-                    nsfw: false,
-                    simi: false,
-                    clear: false,
-                    clearTime: 0
+                    antiToxic: true,
                 }
             } catch (e) {
                 console.error(e)
@@ -730,14 +702,14 @@ module.exports = {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                       let pp = 'https://telegra.ph/file/64691c22ee84bde72b031.jpg'
+                       let pp = './src/welcome.jpg'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang 1'))
-                                this.sendButtonImg(id, pp, text, "©ArullOfc", "Okee", "wkwk", null)
+                                this.sendButtonImg(id, pp, text, "Group Message", "Hi Beban 👋", "wkwk", null)
                                 }
                     }
                 }
