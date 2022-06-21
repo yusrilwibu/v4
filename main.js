@@ -126,8 +126,17 @@ global.reloadHandler = function (restatConn) {
 
   conn.welcome = '*Welcome To Groub* @subject\n\n*Moga Betah Yah;)*'
   conn.bye = '*Keluar Tuh Si Beban,Dadahh👋*'
-  conn.spromote = '╭──֍ 〔 ıll 𝗔𝗗𝗠𝗜𝗡 𝗚𝗥𝗢𝗨𝗣 llı 〕 ֍───\n│╭───────────\n││─⬣ Name : @user\n││─⬣ Desc : Jagain groupnya\n│╰───────────\n╰─────────────────────\n\njaga groupnya\n👾 Salam dari wa.me/6285822347348'
-  conn.sdemote = '╭──֍ 〔 ıll 𝗨𝗡𝗔𝗗𝗠𝗜𝗡 𝗚𝗥𝗢𝗨𝗣 llı 〕 ֍───\n│╭───────────\n││─⬣ Name : @user\n││─⬣ Desc : kurang kerjasama\n│╰───────────\n╰─────────────────────\n\n👾 kesiann\n👾 Salam dari wa.me/6285822347348'
+  conn.spromote = '@user *sekarang admin!*'
+  conn.sdemote = '@user *sekarang bukan admin!*'
+  conn.sDesc = '*Deskripsi telah diubah ke* \n@desc'
+  conn.sSubject = '*Judul grup telah diubah ke* \n@subject'
+  conn.sIcon = '*Icon grup telah diubah!*'
+  conn.sRevoke = '*Link group telah diubah ke* \n@revoke'
+  conn.sAnnounceOn = '*Group telah di tutup!*\nsekarang hanya admin yang dapat mengirim pesan.'
+  conn.sAnnounceOff = '*Group telah di buka!*\nsekarang semua peserta dapat mengirim pesan.'
+  conn.sRestrictOn = '*Edit Info Grup di ubah ke hanya admin!*'
+  conn.sRestrictOff = '*Edit Info Grup di ubah ke semua peserta!*'
+
   conn.handler = handler.handler.bind(conn)
   conn.participantsUpdate = handler.participantsUpdate.bind(conn)
   conn.onDelete = handler.delete.bind(conn)
