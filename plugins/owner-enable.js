@@ -5,8 +5,8 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   let setting = db.data.settings[this.user.jid]
   let set = db.data.settings[this.user.jid]
   let type = (args[0] || '').toLowerCase()
-  let isAll = false
-  let isUser = false
+  let isAll = true
+  let isUser = true
   switch (type) {
     case 'sholat':
     case 'closegroup':
