@@ -9,8 +9,8 @@ let handler = async (m, { conn, isROwner, text }) => {
     for (let i of anu) {
     await delay(500)
     conn.sendBut(i, `${pesan}`, wm, 'PEMILIK BOT', '.owner', null).catch(_ => _)
-    conn.sendBut(i, `${pesan}`, wm, 'MENU', '.menu', null).catch(_ => _)
     }
+    
   m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
 }
 handler.help = ['bcgcbot <teks>']
