@@ -12,11 +12,9 @@ let handler = async (m, { isAdmin, isOwner, conn, command }) => {
 handler.help = ['revoke']
 handler.tags = ['group']
 handler.command = /^re(voke|new|set)(invite|link)?$/i
-handler.group = true
 
+handler.group = true
 handler.botAdmin = true
 
-
 module.exports = handler
-
 const delay = time => new Promise(res => setTimeout(res, time))
