@@ -1,29 +1,33 @@
-let fs = require('fs')
-let handler = async (m, { conn }) => {
-let teks = 'donasi'
-let dana = global.dana
-let pulsa = global.pulsa
-let gopay = global.gopay
-let numberowner = global.numberowner
-let anu = `Hai 👋
-Kalian bisa mendukung saya agar bot ini tetap up to date dengan:
-┌〔 Donasi • Emoney 〕
-├ Dana : ${dana}
-├ Pulsa : ${pulsa}
-├ Gopay : ${gopay}
-└────
-Berapapun donasi kalian akan sangat berarti 👍
+let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
+let text = `
+┌─「 Donasi • Pulsa 」
+│ • *Indosat:* [${global.ppulsa}]
+│ • *Axis:* [${global.ppulsa2}]
+❏────
 
-Arigatou!
-
-Contact person Owner:
-wa.me/${numberowner} (Owner)
-
-*donasi via follow ig juga boleh*`
-  conn.sendButtonImg(m.chat, fla + teks, anu, instagram, 'Back', '.help', m) 
+┌─「 Donasi • Non Pulsa 」
+│ • *Ovo:* [${global.povo}]
+│ • *Gopay:* [${global.pgopay}]
+│ • *Dana:* [${global.pdana}]
+❏────
+`
+const templateButtons = [
+    {index: 1, urlButton: {displayText: '✨ CREDITS', url: psaweria}},
+    {index: 2, urlButton: {displayText: '📷 INSTAGRAM', url: sig}},
+    {index: 3, urlButton: {displayText: '🌎 GROUP BOT', url: sgc}},
+    {index: 4, quickReplyButton: {displayText: 'MENU', id: '.menu'}},
+    {index: 5, quickReplyButton: {displayText: 'OWNER', id: '.owner'}},
+]
+let tm = {
+text: text,
+footer: global.wm,
+templateButtons: templateButtons,
+image: {url: fla + 'Donasi'}
 }
-handler.help = ['donasi', 'donate']
-handler.tags = ['xp', 'info']
-handler.command = /^(donasi|donate)$/i
+conn.sendMessage(m.chat, tm, m)
+}
+handler.help = ['donasi']
+handler.tags = ['info']
+handler.command = /^dona(te|si)$/i
 
-module.exports = handler
+export default handler
