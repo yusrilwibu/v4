@@ -1,37 +1,4 @@
-let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
-	const sections = [
-   {
-	title: `${dmenub} List Options`,
-	rows: [
-	    {title: "✨ | Welcome", rowId: `${usedPrefix + command} welcome`},
-	    {title: "🚫 | Delete", rowId: `${usedPrefix + command} delete`},
-	    {title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
-	{title: "🗣️ | Simi", rowId: `${usedPrefix + command} simi`},
-	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
-	{title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
-	{title: "🔞 | Antitoxic", rowId: `${usedPrefix + command} antitoxic`},
-	{title: "⏏️ | Autolevelup", rowId: `${usedPrefix + command} autolevelup`},
-	{title: "🔎 | Detect", rowId: `${usedPrefix + command} detect`},
-	{title: "📑 | Document", rowId: `${usedPrefix + command} document`},
-	{title: "👤 | WhiteListMyContact", rowId: `${usedPrefix + command} whitelistmycontact`},
-	{title: "❗ | Restrict", rowId: `${usedPrefix + command} restrick`},
-	{title: "😐 | Nyimak", rowId: `${usedPrefix + command} nyimak`},
-	{title: "☑️ | Autoread", rowId: `${usedPrefix + command} autoread`},
-	{title: "💬 | PcOnly", rowId: `${usedPrefix + command} pconly`},
-	{title: "🏢 | GcOnly", rowId: `${usedPrefix + command} gconly`},
-	{title: "📷 | SwOnly", rowId: `${usedPrefix + command} swonly`},
-	]
-    },
-]
-
-const listMessage = {
-  text: ' ',
-  footer: botdate,
-  title: `*${htki} OPTIONS ${htka}*`,
-  buttonText: "Click Here!",
-  sections
-}
-
+  let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
