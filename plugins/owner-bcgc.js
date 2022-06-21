@@ -20,9 +20,9 @@ conn.sendButton(id, '────━┅ *BROADCAST* ┅━────\n' + text
   }
   m.reply('*D O N E !*')
 }
-handler.command = ['bcgcb']
-handler.tags = ['host']
-handler.help = ['bcgcb']
+handler.command = ['bcgcbot']
+handler.tags = ['owner']
+handler.help = ['bcgcbot']
 
 handler.rowner = true
 
