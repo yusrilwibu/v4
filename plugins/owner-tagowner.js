@@ -6,11 +6,9 @@ conn.reply(global.owner[0] + `@s.whatsapp.net`, ` *Ownerku Ada yang memanggil an
 
   conn.reply(m.chat, `
 
-Ngapain lu manggil owner ku dek?
-
-kalau mau sewa chat pribadi aja
-
-Gak usah Malu-malu
+*Ngapain lu manggil owner gw?*
+*kalau mau sewa chat pribadi aja*
+*Gak usah Malu-malu🗿*
 
 `.trim(), m)
 
