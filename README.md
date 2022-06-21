@@ -47,12 +47,12 @@ WhatsApp Bot Multi Device
 | **Node.js**     | heroku/nodejs|
 
 # Creator Bot
- [![Ilman](https://github.com/ilmanhdyt.png?size=200)](https://github.com/ilmanhdyt) | [![Hyzer](https://github.com/Hyzerr.png?size=200)](https://github.com/Hyzerr) | [![ArullOfc](https://github.com/Warikrr.png?size=200)](https://github.com/Warikrr)
+ [![Ilman](https://github.com/ilmanhdyt.png?size=200)](https://github.com/ilmanhdyt) | [![Hyzer](https://github.com/Hyzerr.png?size=200)](https://github.com/Hyzerr) 
 ----|----
-[Ilman](https://github.com/ilmanhdyt) | [Hyzer](https://github.com/Hyzerr) | [Warikrr](https://github.com/Warikrr)
+[Ilman](https://github.com/ilmanhdyt) | [Hyzer](https://github.com/Hyzerr) 
  Author | Creator
  
-### Hyzer Statistics
+### ArullOfc Statistics
 
 [![Hyzer GitHub Stats](https://github-readme-stats.vercel.app/api?username=Hyzerr&show_icons=true&hide=issues&theme=radical)](https://github-readme-stats.vercel.app)
 [![Hyzer Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=Hyzerr&layout=compact&theme=radical)](https://github-readme-stats.vercel.app)
