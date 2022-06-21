@@ -1,33 +1,22 @@
+import { randomBytes } from 'crypto'
+
 let handler = async (m, { conn, text }) => {
-  let chats = conn.chats.all().filter(v => v.jid.endsWith('.net')).map(v => v.jid)
+  let chats = Object.entries(conn.chats).filter(([jid, chat]) => !jid.endsWith('@g.us') && chat.isChats).map(v => v[0])
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
   let teks = text ? text : cc.text
-  conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_\nestimasi selesai ${chats.length * 1} detik`, m)
-  for (let id of chats) {
-    await delay(1000)
-    await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : '' + teks + '' + ''), false).catch(_ => _)
-  }
-  m.reply('_*Broadcast Selesai*_')
+  conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
+  for (let id of chats) await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n' + readMore + '「 ' + author + ' All Chat Broadcast 」\n' + randomID(32)), true).catch(_ => _)
+  m.reply('Selesai Broadcast All Chat :)')
 }
-handler.help = ['bc'].map(v => v + ' <teks>')
+handler.help = ['broadcastchats', 'bcchats'].map(v => v + ' <teks>')
 handler.tags = ['owner']
-handler.command = /^(broadcast|bc)$/i
+handler.command = /^(broadcastchats?|bcc(hats?)?)$/i
+
 handler.owner = true
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
 
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-
-module.exports = handler
+export default handler
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
-const randomID = length => require('crypto').randomBytes(Math.ceil(length * .5)).toString('hex').slice(0, length)
-
-const delay = time => new Promise(res => setTimeout(res, time))
+const randomID = length => randomBytes(Math.ceil(length * .5)).toString('hex').slice(0, length)
