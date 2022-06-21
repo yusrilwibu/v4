@@ -8,13 +8,13 @@ let handler = async (m, { conn, isROwner, text }) => {
     m.reply(`Mengirim Broadcast Ke ${anu.length} Chat, Waktu Selesai ${anu.length * 0.5 } detik`)
     for (let i of anu) {
     await delay(500)
-    conn.sendBut(i, `${pesan}`, wm, 'OWNER ARULLBOTZMD', '.owner', null).catch(_ => _)
+    conn.sendTB(i, `${pesan}`, wm, 'Chat Owner', 'https://wa.me/'+global.owner[0]+'?text=Assalamu\'alaikum', null).catch(_ => _)
     }
   m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
 }
-handler.help = ['bcgcbot <teks>']
+handler.help = ['bcgcowner <teks>']
 handler.tags = ['owner']
-handler.command = /^((broadcastgc|bcgc)bot)$/i
+handler.command = /^(broadcastgc|bcgc)o(wne?r?)?$/i
 
 handler.owner = true
 
