@@ -29,6 +29,9 @@ const defaultMenu = {
 ║Database: %rtotalreg dari %totalreg
 ║Memory Used : *${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB*
 
+THANKS TO:
+• ArullOfc
+• All Creator Bot
 %readmore`.trimStart(), 
   header: '┌─「 %category 」',
   body: '├ %cmd %islimit %isPremium',
@@ -296,7 +299,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             description: menuu,
             buttonText: 'LIST MENU',
             listType: 1,
-            footerText: "⬣━〔Powered By ©ArullOfc〕━⬣\n       ▌│█║▌║▌║║▌║▌║█│▌",
+            footerText: "ꜱɪʟᴀʜᴋᴀɴ ᴘɪʟɪʜ ᴍᴇɴᴜ ᴅɪʙᴀᴡᴀʜ",
             mtype: 'listMessage',
             sections: [
               {
@@ -499,35 +502,35 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
             hydratedFooterText: wm2, 
             hydratedButtons: [{
             urlButton: {
-               displayText: 'YOUTUBE ME',
+               displayText: 'Youtube Creator',
                url: web
              }
 
            },
              {
              urlButton: {
-               displayText: 'GROUP BOT', 
+               displayText: 'Group Bot', 
                url: gc
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'PEMILIK BOT',
+               displayText: 'Pemilik Bot',
                id: '.owner',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'RULES ARULLBOTZMD',
+               displayText: 'Rules Bot',
                id: '.rules',
              }
 
            },
            {
              quickReplyButton: {
-               displayText: 'THANKS TO',
+               displayText: 'Thanks To',
                id: '.tqto',
              }
            }]
