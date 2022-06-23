@@ -19,7 +19,7 @@ ${gy} Library : *Baileys-MD*
 ${gy} Language : *Javascript*
 ${gy} Database : *MongoDB*
 ${gy} Version : *${versibot}*
-${gy} Developer : *@6285346545126*
+${gy} Developer : *@6281376490773*
 ${gy} Runtime : *${runtime}*
 ${gy} Prefix : *Multi Prefix 「 ${usedPrefix} 」*
 ${gy} Mode : *${global.opts['self'] ? 'Self' : 'Public'}*
