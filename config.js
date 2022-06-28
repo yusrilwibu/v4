@@ -62,7 +62,7 @@ global.APIKeys = { // APIKey Here
   'https://server-api-rey.herokuapp.com': 'apirey',
   'https://hardianto-chan.herokuapp.com': 'hardianto',
   'https://neoxr-api.herokuapp.com': 'yntkts',
-  'https://pencarikode.xyz': 'APIKEY',
+  'https://pencarikode.xyz': 'pais',
   'https://api.xteam.xyz': 'HIRO',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.xyz': 'nyyxz-bot',
