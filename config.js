@@ -8,7 +8,7 @@ global.nameowner = 'Its me rtc'
 global.numberowner = '6281376490773'
 global.instagram = 'kepo'
 global.github = 'https://github.com/sahrull11'
-global.dana = '881376490773'
+global.dana = '081376490773'
 global.pulsa = '081275274328,081376490773'
 global.gopay = '081275274328'
 
